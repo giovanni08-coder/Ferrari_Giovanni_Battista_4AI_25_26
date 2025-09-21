@@ -145,4 +145,23 @@ int somma = 0;
 
         FaiQualcosa();
         String nome="SuperMario";
-        System.out.println(nome);*/
+        System.out.println(nome);
+
+
+String capitalize(String s){
+    for (int i=0;i<s.lenght();i++;){
+        if i==0 or i-1==" "{
+            Character mioCharacter = new Character(i);
+            i=i.toUpperCase()
+        }
+    }
+}
+
+String s1 = IO.readln("inserisci una frase");
+    //string b= capitalize(String s1);
+    //I0.printl(b);
+
+
+
+
+        */
