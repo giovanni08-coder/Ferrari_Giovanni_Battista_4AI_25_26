@@ -18,3 +18,5 @@ void main() {
     String b= capitalize(s1);
     IO.println(b);
 }
+//Character.isLetter() e Character.isWhitespace() metodi per controllare se un carattere
+// è una lettera e uno spazio bianco
