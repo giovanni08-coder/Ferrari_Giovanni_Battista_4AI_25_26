@@ -1,13 +1,14 @@
 String capitalize(String s){
     String l="";
-    for (int i=0;i<s.length();i++){
+    if(s.matches("^[a-zA-Z\\s]*$")) {
+        for (int i = 0; i < s.length(); i++) {
 
-        if (i==0 || s.charAt(i - 1)==' ') {
-            char b=Character.toUpperCase(s.charAt(i));
-            l=l + b;
-        }
-        else {
-            l = l + s.charAt(i);
+            if (i == 0 || s.charAt(i - 1) == ' ') {
+                char b = Character.toUpperCase(s.charAt(i));
+                l = l + b;
+            } else {
+                l = l + s.charAt(i);
+            }
         }
     }
     return l;
