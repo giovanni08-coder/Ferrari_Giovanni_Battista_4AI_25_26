@@ -6,6 +6,6 @@ void main() {
     IO.println(String.format("Hello and welcome!"));
     Date date= new Date("19/9/2025");
     System.out.println(date);
-    
+
     }
 }
