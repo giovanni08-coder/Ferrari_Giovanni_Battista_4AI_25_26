@@ -17,7 +17,7 @@ public static String Lettere_in_Grande(String a){
                 l = l + b ;
             }
     }
-        
+
     System.out.println(l);
     return a;
 }
