@@ -1,21 +1,29 @@
 void main() {
-/*Scrivi una classe chiamata Automobile che rappresenti un'auto. La classe deve avere i seguenti attributi e metodi:
-   -  marca (stringa): la marca dell'auto.
-   - modello (stringa): il modello dell'auto.
-   - anno (intero): l'anno di fabbricazione.
-   - chilometraggio (float): il chilometraggio attuale dell'auto.
-Metodi:
-    Costruttore: un metodo speciale che inizializza gli attributi della classe.
-    stampa_dettagli(): un metodo che stampa i dettagli dell'auto in un formato leggibile, ad esempio:
-         Marca: Ford
-         Modello: Fiesta
-         Anno: 2020
-        Chilometraggio: 15000 km
-   aggiorna_chilometraggio(nuovo_chilometraggio): un metodo che aggiorna il chilometraggio dell'auto.
-   Assicurati che il nuovo chilometraggio non sia inferiore al chilometraggio attuale.
-   calcola_eta(): un metodo che calcola e restituisce l'età dell'auto (l'anno attuale meno l'anno di fabbricazione).
+/*Classe Studente
+Crea una classe Studente che rappresenti uno studente in una scuola. La classe dovrà avere i seguenti attributi e metodi:
+Attributi
+nome: stringa che rappresenta il nome dello studente.
+cognome: stringa che rappresenta il cognome dello studente.
+matricola: stringa che rappresenta il numero di matricola.
+annoIscrizione: intero che rappresenta l'anno di iscrizione dello studente.
+voti: lista di numeri decimali che rappresenta i voti ottenuti dallo studente
+Metodi
+Costruttore: che inizializza i valori degli attributi.
+AggiungiVoto(float voto): metodo per aggiungere un voto alla lista dei voti.
+CalcolaMedia(): metodo che restituisce la media dei voti.
+StampaDettagli(): metodo per stampare i dettagli dello studente, inclusi nome, cognome, matricola, anno di iscrizione e media dei voti.
+
 
  */
-Automobile o= new Automobile();
-    System.out.println(o.toString());
+Automobile auto= new Automobile();
+Studente studente= new Studente();
+    System.out.println(auto.toString());
+    auto.getAggiorna_Chilometraggio(200000);
+    System.out.println(auto.getKm());
+    System.out.println(auto.calcolaetà());
+    studente.Aggiungi_voto(7);
+    studente.Aggiungi_voto(4);
+    studente.Aggiungi_voto(5);
+    System.out.println(studente.CalcolaMedia());
+    System.out.println(studente.toString());
 }
