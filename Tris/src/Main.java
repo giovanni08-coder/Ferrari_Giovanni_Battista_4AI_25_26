@@ -16,16 +16,17 @@ void main() {
     matrix2[1][0]=1;
     matrix2[0][0]=5;
     matrix2[1][2]=8;
-
+/*
    for (int i =0; i<3;i++){
        for (int j=0;j<3;j++) {
            System.out.print(matrix2[i][j]);
            if (j!=2){
-               System.out.print( "|");
+               System.out.print( "  |");
            }
        }
        System.out.println();
-       //System.out.println("-|-|-");
-   }
+       System.out.println("---|---|---");
+   }*/
+    System.out.println(g1.Get_griglia());
 
 }
