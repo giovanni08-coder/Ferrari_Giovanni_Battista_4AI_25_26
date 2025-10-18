@@ -27,6 +27,7 @@ void main() {
        System.out.println();
        System.out.println("---|---|---");
    }*/
+    g1.Set_griglia();
     System.out.println(g1.Get_griglia());
 
 }
