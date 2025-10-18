@@ -1,28 +1,24 @@
 public class Griglia {
-    public final int x = 2;
-    public final int y = 2;
+    public final int x = 5;
+    public final int y = 3;
     public int riga;
     public int colonna;
-    private static char[][] griglia;
     private String grill="";
     private static char[][] xy;
     public Griglia(){
-        griglia= new char[x][y];
-    }
-    public void Set_griglia(){
-        for (int r=0; r< 2; r++){
-            for (int c=0; c<2; c++){
-                    this.griglia[r][c] = '|';
-            }
-        }
+        xy= new char[3][3];
     }
     public String Get_griglia(){
-        for (int r=0; r< 2; r++){
-            for (int c=0; c<2; c++){
-                if(griglia[r][c]!='Ø') {
-                    grill += griglia[r][c];
+        grill="";
+        for (int i =0; i<3;i++){
+            for (int j=0;j<3;j++) {
+                grill+=xy[i][j];
+                if (j!=2){
+                    grill+="  |";
                 }
             }
+            grill+="\n";
+            grill+="---|---|---";
             grill+="\n";
         }
         return grill;
@@ -45,11 +41,14 @@ public class Griglia {
     public int Get_colonna(){
         return colonna;
     }
-    public void Get_simboli_input1(){
+    public String Get_simboli_input1(){
         xy[Get_riga()][Get_colonna()]='X';
+        return Get_griglia();
+
     }
-    public void Get_simboli_input2(){
+    public String Get_simboli_input2(){
         xy[Get_riga()][Get_colonna()]='0';
+        return Get_griglia();
     }
 }
 
