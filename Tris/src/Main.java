@@ -1,14 +1,8 @@
 void main() {
-
-////   int[][] matrix = new int[3][3];
     char[][] matrix2 = new char[3][3];
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            matrix2[i][j]=' ';
-            }
-        }
     Griglia g1 = new Griglia(matrix2);
-    System.out.println(g1.Get_griglia(matrix2));
+    g1.Set_griglia(matrix2);
+    System.out.println(g1.Get_griglia());
     while ((!g1.Vittoria_condizione(matrix2))&&(!g1.MatricePiena(matrix2))){
         if(!g1.Vittoria_condizione(matrix2)&&(!g1.MatricePiena(matrix2))) {
             String s1 = IO.readln("Giocatore 1 inserisci la riga in cui mettere il tuo simbolo: ");

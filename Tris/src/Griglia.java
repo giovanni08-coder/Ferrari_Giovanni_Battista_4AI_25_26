@@ -7,10 +7,14 @@ public class Griglia {
     private static char[][] xy;
 
     public Griglia(char[][] matrice) {
-        matrice = new char[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                matrice[i][j]=' ';
+            }
+        }
     }
 
-    public String Get_griglia(char[][] matrice) {
+    public void Set_griglia(char[][] matrice) {
         grill = "";
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -23,6 +27,8 @@ public class Griglia {
             grill += "---|---|---";
             grill += "\n";
         }
+    }
+    public String Get_griglia() {
         return grill;
     }
 
@@ -53,7 +59,8 @@ public class Griglia {
             throw new IllegalArgumentException("non puoi sostituire un simbolo");
         }
         matrice[Get_riga()][Get_colonna()] = 'X';
-        return Get_griglia(matrice);
+        Set_griglia(matrice);
+        return Get_griglia();
 
     }
 
@@ -62,7 +69,8 @@ public class Griglia {
             throw new IllegalArgumentException("non puoi sostituire un simbolo");
         }
         matrice[Get_riga()][Get_colonna()] = '0';
-        return Get_griglia(matrice);
+        Set_griglia(matrice);
+        return Get_griglia();
     }
 
     public boolean MatricePiena(char[][] matrice) {
