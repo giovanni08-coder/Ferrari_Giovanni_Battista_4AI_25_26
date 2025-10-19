@@ -6,15 +6,15 @@ public class Griglia {
     private String grill = "";
     private static char[][] xy;
 
-    public Griglia() {
-        xy = new char[3][3];
+    public Griglia(char[][] matrice) {
+        matrice = new char[3][3];
     }
 
-    public String Get_griglia() {
+    public String Get_griglia(char[][] matrice) {
         grill = "";
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                grill += xy[i][j];
+                grill += matrice[i][j];
                 if (j != 2) {
                     grill += "  |";
                 }
@@ -48,42 +48,79 @@ public class Griglia {
         return colonna;
     }
 
-    public String Get_simboli_input1() {
-        if (xy[Get_riga()][Get_colonna()] == 'X' || xy[Get_riga()][Get_colonna()] == '0') {
+    public String Get_simboli_input1(char[][] matrice) {
+        if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == '0') {
             throw new IllegalArgumentException("non puoi sostituire un simbolo");
         }
-        xy[Get_riga()][Get_colonna()] = 'X';
-        return Get_griglia();
+        matrice[Get_riga()][Get_colonna()] = 'X';
+        return Get_griglia(matrice);
 
     }
 
-    public String Get_simboli_input2() {
-        if (xy[Get_riga()][Get_colonna()] == 'X' || xy[Get_riga()][Get_colonna()] == '0') {
+    public String Get_simboli_input2(char[][] matrice) {
+        if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == '0') {
             throw new IllegalArgumentException("non puoi sostituire un simbolo");
         }
-        xy[Get_riga()][Get_colonna()] = '0';
-        return Get_griglia();
+        matrice[Get_riga()][Get_colonna()] = '0';
+        return Get_griglia(matrice);
     }
-    public class Pair<A, B> {
-        public A first;
-        public B second;
 
-        public Pair(A first, B second) {
-            this.first = first;
-            this.second = second;
+    public boolean MatricePiena(char[][] matrice) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (matrice[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public String Vittoria(char[][] matrice) {
+        if ((matrice[0][0] == 'X' && matrice[0][1] == 'X' && matrice[0][2] == 'X') ||
+                (matrice[1][0] == 'X' && matrice[1][1] == 'X' && matrice[1][2] == 'X') ||
+                (matrice[2][0] == 'X' && matrice[2][1] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[0][0] == 'X' && matrice[1][0] == 'X' && matrice[2][0] == 'X') ||
+                (matrice[0][1] == 'X' && matrice[1][1] == 'X' && matrice[2][1] == 'X') ||
+                (matrice[0][2] == 'X' && matrice[1][2] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[0][0] == 'X' && matrice[1][1] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[2][0] == 'X' && matrice[1][1] == 'X' && matrice[0][2] == 'X')) {
+            return "Ha vinto il giocatore 1";
+        } else if ((matrice[0][0] == '0' && matrice[0][1] == '0' && matrice[0][2] == '0') ||
+                (matrice[1][0] == '0' && matrice[1][1] == '0' && matrice[1][2] == '0') ||
+                (matrice[2][0] == '0' && matrice[2][1] == '0' && matrice[2][2] == '0') ||
+                (matrice[0][0] == '0' && matrice[1][0] == '0' && matrice[2][0] == '0') ||
+                (matrice[0][1] == '0' && matrice[1][1] == '0' && matrice[2][1] == '0') ||
+                (matrice[0][2] == '0' && matrice[1][2] == '0' && matrice[2][2] == '0') ||
+                (matrice[0][0] == '0' && matrice[1][1] == '0' && matrice[2][2] == '0') ||
+                (matrice[2][0] == '0' && matrice[1][1] == '0' && matrice[0][2] == '0')) {
+            return "Ha vinto il giocatore 2";
+        } else {
+            return "Non ha vinto nessuno";
         }
     }
-    public Pair<String,Boolean> Vittoria(Boolean errore){
-        if ((xy[0][0] == 'X' && xy[0][1] == 'X' && xy[0][2] == 'X')||(xy[1][0] == 'X' && xy[1][1] == 'X' && xy[1][2] == 'X')||(xy[2][0] == 'X' && xy[2][1] == 'X' && xy[2][2] == 'X')||(xy[0][1] == 'X' && xy[1][1] == 'X' && xy[2][1] == 'X')||(xy[0][2] == 'X' && xy[1][2] == 'X' && xy[2][2] == 'X')||(xy[0][0] == 'X' && xy[1][0] == 'X' && xy[2][0] == 'X')||(xy[0][0] == 'X' && xy[1][1] == 'X' && xy[2][2] == 'X')||(xy[2][0] == 'X' && xy[1][1] == 'X' && xy[0][2] == 'X')){
-            errore=false;
-            return new Pair<>("Ha vinto il giocatore 1",errore);
+
+    public boolean Vittoria_condizione(char[][] matrice) {
+        if ((matrice[0][0] == 'X' && matrice[0][1] == 'X' && matrice[0][2] == 'X') ||
+                (matrice[1][0] == 'X' && matrice[1][1] == 'X' && matrice[1][2] == 'X') ||
+                (matrice[2][0] == 'X' && matrice[2][1] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[0][0] == 'X' && matrice[1][0] == 'X' && matrice[2][0] == 'X') ||
+                (matrice[0][1] == 'X' && matrice[1][1] == 'X' && matrice[2][1] == 'X') ||
+                (matrice[0][2] == 'X' && matrice[1][2] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[0][0] == 'X' && matrice[1][1] == 'X' && matrice[2][2] == 'X') ||
+                (matrice[2][0] == 'X' && matrice[1][1] == 'X' && matrice[0][2] == 'X')) {
+            return true;
+        } else if ((matrice[0][0] == '0' && matrice[0][1] == '0' && matrice[0][2] == '0') ||
+                (matrice[1][0] == '0' && matrice[1][1] == '0' && matrice[1][2] == '0') ||
+                (matrice[2][0] == '0' && matrice[2][1] == '0' && matrice[2][2] == '0') ||
+                (matrice[0][0] == '0' && matrice[1][0] == '0' && matrice[2][0] == '0') ||
+                (matrice[0][1] == '0' && matrice[1][1] == '0' && matrice[2][1] == '0') ||
+                (matrice[0][2] == '0' && matrice[1][2] == '0' && matrice[2][2] == '0') ||
+                (matrice[0][0] == '0' && matrice[1][1] == '0' && matrice[2][2] == '0') ||
+                (matrice[2][0] == '0' && matrice[1][1] == '0' && matrice[0][2] == '0')) {
+            return true;
         }
-        if((xy[0][0] == '0' && xy[0][1] == '0' && xy[0][2] == '0')||(xy[1][0] == '0' && xy[1][1] == '0' && xy[1][2] == '0')||(xy[2][0] == '0' && xy[2][1] == '0' && xy[2][2] == '0')||(xy[0][1] == '0' && xy[1][1] == '0' && xy[2][1] == '0')||(xy[0][2] == '0' && xy[1][2] == '0' && xy[2][2] == '0')||(xy[0][0] == '0' && xy[1][0] == '0' && xy[2][0] == '0')||(xy[0][0] == '0' && xy[1][1] == '0' && xy[2][2] == '0')||(xy[2][0] == '0' && xy[1][1] == '0' && xy[0][2] == '0')){
-            errore=false;
-            return new Pair<>("Ha vinto il giocatore 2",errore);
-        }
-        errore=false;
-        return new Pair<>("non ha vinto nessuno",errore);
+        return false;
     }
 }
 
