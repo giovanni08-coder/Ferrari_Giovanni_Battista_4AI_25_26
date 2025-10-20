@@ -1,11 +1,11 @@
 public class Griglia {
-    public final int x = 5;
+    public final int x = 3;
     public final int y = 3;
     public int riga;
     public int colonna;
     private String grill = "";
-    private static char[][] xy;
     boolean errore;
+    private String name;
 
     public Griglia(char[][] matrice) {
         for (int i = 0; i < 3; i++) {
@@ -45,9 +45,6 @@ public class Griglia {
             this.errore=true;
         }
     }
-    public boolean Verfica_riga(){
-        return errore;
-    }
     public int Get_riga() {
         return riga;
     }
@@ -64,33 +61,57 @@ public class Griglia {
                 this.errore=true;
             }
     }
-    public boolean Verfica_colonna(){
-        return errore;
-    }
 
     public int Get_colonna() {
         return colonna;
     }
-
-    public String Get_simboli_input1(char[][] matrice) {
-        if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == '0') {
-            throw new IllegalArgumentException("non puoi sostituire un simbolo");
+    public void Verifica_stringa(String s1,boolean errore){
+        this.errore=errore;
+        try {
+            if (s1.isEmpty() || s1.matches("[a-zA-Z]*$")) {
+                throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
+            }
+            name=s1;
+            this.errore=false;
+        } catch (IllegalArgumentException e) {
+            this.errore=true;
         }
-        matrice[Get_riga()][Get_colonna()] = 'X';
-        Set_griglia(matrice);
-        return Get_griglia();
-
+    }
+    public String Get_stringa(){
+        return name;
     }
 
-    public String Get_simboli_input2(char[][] matrice) {
-        if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == '0') {
-            throw new IllegalArgumentException("non puoi sostituire un simbolo");
+
+    public void Set_simboli_input1(char[][] matrice, boolean errore) {
+        this.errore=errore;
+        try {
+            if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == 'O') {
+                throw new IllegalArgumentException("non puoi sostituire un simbolo");
+            }
+            matrice[Get_riga()][Get_colonna()] = 'X';
+            Set_griglia(matrice);
+            this.errore=false;
+        } catch (IllegalArgumentException e) {
+            this.errore=true;
         }
-        matrice[Get_riga()][Get_colonna()] = '0';
-        Set_griglia(matrice);
-        return Get_griglia();
     }
 
+    public void Set_simboli_input2(char[][] matrice,boolean errore) {
+        this.errore=errore;
+        try {
+            if (matrice[Get_riga()][Get_colonna()] == 'X' || matrice[Get_riga()][Get_colonna()] == 'O') {
+                throw new IllegalArgumentException("non puoi sostituire un simbolo");
+            }
+            matrice[Get_riga()][Get_colonna()] = 'O';
+            Set_griglia(matrice);
+            this.errore=false;
+        } catch (IllegalArgumentException e) {
+            this.errore=true;
+        }
+    }
+    public boolean Verfica_riga(){
+        return errore;
+    }
     public boolean MatricePiena(char[][] matrice) {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -112,14 +133,14 @@ public class Griglia {
                 (matrice[0][0] == 'X' && matrice[1][1] == 'X' && matrice[2][2] == 'X') ||
                 (matrice[2][0] == 'X' && matrice[1][1] == 'X' && matrice[0][2] == 'X')) {
             return "Ha vinto il giocatore 1";
-        } else if ((matrice[0][0] == '0' && matrice[0][1] == '0' && matrice[0][2] == '0') ||
-                (matrice[1][0] == '0' && matrice[1][1] == '0' && matrice[1][2] == '0') ||
-                (matrice[2][0] == '0' && matrice[2][1] == '0' && matrice[2][2] == '0') ||
-                (matrice[0][0] == '0' && matrice[1][0] == '0' && matrice[2][0] == '0') ||
-                (matrice[0][1] == '0' && matrice[1][1] == '0' && matrice[2][1] == '0') ||
-                (matrice[0][2] == '0' && matrice[1][2] == '0' && matrice[2][2] == '0') ||
-                (matrice[0][0] == '0' && matrice[1][1] == '0' && matrice[2][2] == '0') ||
-                (matrice[2][0] == '0' && matrice[1][1] == '0' && matrice[0][2] == '0')) {
+        } else if ((matrice[0][0] == 'O' && matrice[0][1] == 'O' && matrice[0][2] == 'O') ||
+                (matrice[1][0] == 'O' && matrice[1][1] == 'O' && matrice[1][2] == 'O') ||
+                (matrice[2][0] == 'O' && matrice[2][1] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[0][0] == 'O' && matrice[1][0] == 'O' && matrice[2][0] == 'O') ||
+                (matrice[0][1] == 'O' && matrice[1][1] == 'O' && matrice[2][1] == 'O') ||
+                (matrice[0][2] == 'O' && matrice[1][2] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[0][0] == 'O' && matrice[1][1] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[2][0] == 'O' && matrice[1][1] == 'O' && matrice[0][2] == 'O')) {
             return "Ha vinto il giocatore 2";
         } else {
             return "Non ha vinto nessuno";
@@ -136,14 +157,14 @@ public class Griglia {
                 (matrice[0][0] == 'X' && matrice[1][1] == 'X' && matrice[2][2] == 'X') ||
                 (matrice[2][0] == 'X' && matrice[1][1] == 'X' && matrice[0][2] == 'X')) {
             return true;
-        } else if ((matrice[0][0] == '0' && matrice[0][1] == '0' && matrice[0][2] == '0') ||
-                (matrice[1][0] == '0' && matrice[1][1] == '0' && matrice[1][2] == '0') ||
-                (matrice[2][0] == '0' && matrice[2][1] == '0' && matrice[2][2] == '0') ||
-                (matrice[0][0] == '0' && matrice[1][0] == '0' && matrice[2][0] == '0') ||
-                (matrice[0][1] == '0' && matrice[1][1] == '0' && matrice[2][1] == '0') ||
-                (matrice[0][2] == '0' && matrice[1][2] == '0' && matrice[2][2] == '0') ||
-                (matrice[0][0] == '0' && matrice[1][1] == '0' && matrice[2][2] == '0') ||
-                (matrice[2][0] == '0' && matrice[1][1] == '0' && matrice[0][2] == '0')) {
+        } else if ((matrice[0][0] == 'O' && matrice[0][1] == 'O' && matrice[0][2] == 'O') ||
+                (matrice[1][0] == 'O' && matrice[1][1] == 'O' && matrice[1][2] == 'O') ||
+                (matrice[2][0] == 'O' && matrice[2][1] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[0][0] == 'O' && matrice[1][0] == 'O' && matrice[2][0] == 'O') ||
+                (matrice[0][1] == 'O' && matrice[1][1] == 'O' && matrice[2][1] == 'O') ||
+                (matrice[0][2] == 'O' && matrice[1][2] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[0][0] == 'O' && matrice[1][1] == 'O' && matrice[2][2] == 'O') ||
+                (matrice[2][0] == 'O' && matrice[1][1] == 'O' && matrice[0][2] == 'O')) {
             return true;
         }
         return false;
