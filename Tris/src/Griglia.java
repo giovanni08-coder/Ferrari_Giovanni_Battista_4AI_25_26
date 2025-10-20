@@ -5,6 +5,7 @@ public class Griglia {
     public int colonna;
     private String grill = "";
     private static char[][] xy;
+    boolean errore;
 
     public Griglia(char[][] matrice) {
         for (int i = 0; i < 3; i++) {
@@ -32,22 +33,39 @@ public class Griglia {
         return grill;
     }
 
-    public void Set_riga(int riga) {
-        if (riga >= x) {
-            throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
+    public void Set_riga(int riga, boolean errore) {
+        this.errore=errore;
+        try {
+            if (riga >= x) {
+                throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
+            }
+            this.riga = riga;
+            this.errore=false;
+        } catch (IllegalArgumentException e) {
+            this.errore=true;
         }
-        this.riga = riga;
     }
-
+    public boolean Verfica_riga(){
+        return errore;
+    }
     public int Get_riga() {
         return riga;
     }
 
-    public void Set_colonna(int colonna) {
-        if (colonna >= y) {
-            throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
-        }
-        this.colonna = colonna;
+    public void Set_colonna(int colonna,boolean errore) {
+        this.errore=errore;
+            try {
+                if (colonna >= y) {
+                    throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
+                }
+                this.colonna = colonna;
+                this.errore=false;
+            } catch (IllegalArgumentException e) {
+                this.errore=true;
+            }
+    }
+    public boolean Verfica_colonna(){
+        return errore;
     }
 
     public int Get_colonna() {
