@@ -68,7 +68,7 @@ public class Griglia {
     public void Verifica_stringa(String s1,boolean errore){
         this.errore=errore;
         try {
-            if (s1.isEmpty() || s1.matches("[a-zA-Z]*$")) {
+            if (s1.isEmpty() || !s1.matches("[0-2]")) {
                 throw new IllegalArgumentException("non puoi inserire il simbolo in questa riga");
             }
             name=s1;
