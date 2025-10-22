@@ -2,7 +2,7 @@ public class Forza4 {
     public final int x = 6;
     public final int y = 7;
     public String colonna;
-    private char[][] griglia;
+    private char[][] griglia= new char[x][y];
     private String grill;
     private char simbolo_g1='O';
     private char simbolo_g2='X';
@@ -33,26 +33,35 @@ public class Forza4 {
         return grill;
     }
 
-
-
-    public void Set_verifica_string(String s1){
-        if (s1=="" || !s1.matches("[1-7]")){
-            throw new IllegalArgumentException("non puoi inserire il seguente valore ");
+    public boolean Verifica_vittoria() {
+        for (int i = 0; i < x-1; i++) {
+            for (int j = 0; j < y-1; j++) {
+                if (griglia[i][j] == simbolo_g1 && griglia[i + 1][j] == simbolo_g1 && griglia[i + 2][j] == simbolo_g1 && griglia[i + 3][j] == simbolo_g1) {
+                    return false;
+                }
+                if (griglia[i][j] == simbolo_g1 && griglia[i][j + 1] == simbolo_g1 && griglia[i][j + 2] == simbolo_g1 && griglia[i][j + 3] == simbolo_g1) {
+                    return false;
+                }
+            }
         }
-    }
+        for (int i = 0; i < x-1; i++) {
+            for (int j = 0; j < y-1; j++) {
+                if (griglia[i][j] == simbolo_g2 && griglia[i + 1][j] == simbolo_g2 && griglia[i + 2][j] == simbolo_g2 && griglia[i + 3][j] == simbolo_g2) {
+                    return false;
+                }
+                if (griglia[i][j] == simbolo_g2 && griglia[i][j + 1] == simbolo_g2 && griglia[i][j + 2] == simbolo_g2 && griglia[i][j + 3] == simbolo_g2) {
+                    return false;
+                }
+            }
+        }
 
-    public String Get_colonna(){
-        return colonna;
-    }
-
-    public boolean Verifica_vittoria(){
-        return false;
+        return true;
     }
 
     public void Inserisci(int colonna){
         colonna-=1;
         if(colonna<0 || colonna>6){
-            throw new IllegalArgumentException("ma che caccio di colonna hai chiesto???");
+            throw new IllegalArgumentException("ma che cacchio di colonna hai chiesto???");
         }
         if(griglia[0][colonna] != ' '){
             throw new IllegalArgumentException("ueeee.... ma non hai visto che la colonna è piena!!!");
@@ -64,7 +73,7 @@ public class Forza4 {
         }
         griglia[fondo][colonna] = simbolo_gioc_corrente;
 
-        if(Verifica_vittoria() == false) {
+        if(Verifica_vittoria() == true) {
             if (simbolo_gioc_corrente == simbolo_g1) simbolo_gioc_corrente = simbolo_g2;
             else simbolo_gioc_corrente = simbolo_g1;
         }
