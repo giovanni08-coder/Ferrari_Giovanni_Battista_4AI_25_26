@@ -29,6 +29,7 @@ void main() {
             errore = f1.Verifica_vittoria();
         }
     }
+    System.out.println(f1.Chi_vince());
 
 
 

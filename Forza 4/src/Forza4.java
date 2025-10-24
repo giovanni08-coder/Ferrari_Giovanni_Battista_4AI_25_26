@@ -72,6 +72,45 @@ public class Forza4 {
 
         return true;
     }
+    public String Chi_vince() {
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y;j++) {
+                if (i <= x-4 && griglia[i][j] == simbolo_g1 && griglia[i + 1][j] == simbolo_g1 && griglia[i + 2][j] == simbolo_g1 && griglia[i + 3][j] == simbolo_g1) {
+                    return "ha vinto il giocatore 1";
+                }
+                if (j < y-4 && griglia[i][j] == simbolo_g1 && griglia[i][j + 1] == simbolo_g1 && griglia[i][j + 2] == simbolo_g1 && griglia[i][j + 3] == simbolo_g1) {
+                    return "ha vinto il giocatore 1";
+                }
+            }
+        }
+        for (int i = 0; i <x; i++) {
+            for (int j = 0;j < y ; j++) {
+                if (i <= x-4 && griglia[i][j] == simbolo_g2 && griglia[i + 1][j] == simbolo_g2 && griglia[i + 2][j] == simbolo_g2 && griglia[i + 3][j] == simbolo_g2) {
+                    return "ha vinto il giocatore 2";
+                }
+                if (j <= x-4 && griglia[i][j] == simbolo_g2 && griglia[i][j + 1] == simbolo_g2 && griglia[i][j + 2] == simbolo_g2 && griglia[i][j + 3] == simbolo_g2) {
+                    return "ha vinto il giocatore 2";
+                }
+            }
+        }
+        for (int i = 0; i < x-3; i++) {
+            for (int j = 0; j < y - 3; j++) {
+                if (griglia[i][j] == simbolo_g1 && griglia[i + 1][j + 1] == simbolo_g1 && griglia[i + 2][j + 2] == simbolo_g1 && griglia[i + 3][j + 3] == simbolo_g1) {
+                    return "ha vinto il giocatore 1";
+                }
+            }
+        }
+        for (int i = 0; i < x-3; i++) {
+            for (int j = 0; j < y-3; j++) {
+                if (griglia[i][j] == simbolo_g2 && griglia[i + 1][j + 1] == simbolo_g2 && griglia[i + 2][j + 2] == simbolo_g2 && griglia[i + 3][j + 3] == simbolo_g2) {
+                    return "ha vinto il giocatore 2";
+                }
+
+            }
+        }
+
+        return "non ha vinto nessuno";
+    }
 
     public void Inserisci(int colonna){
         colonna-=1;
