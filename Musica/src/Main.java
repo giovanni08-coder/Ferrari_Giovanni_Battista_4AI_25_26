@@ -8,4 +8,8 @@ void main() {
     Brano.AggiungiBrano(new Brano("Sound of Dalmen",2025,3,"Dj Pelucchi"));
     Brano.AggiungiBrano(new Brano("Sound of Dalmen",2022,2,"D Pelucchi"));
     System.out.println(b1.Stampa_brani());
+    Brano.Remove_brano(new Brano("Sound of Dalmen",2022,2,"D Pelucchi"));
+    System.out.println(b1.Stampa_brani());
+    Brano.Modifica_brano(new Brano("Sound of Dalmen",2022,2,"D Pelucchi"),new Brano("Sound of Dalmen",2025,3,"Dj Pelucchi"));
+    System.out.println(b1.Stampa_brani());
 }
