@@ -122,6 +122,13 @@ public class Brano {
             throw new IllegalArgumentException("non puoi modificare un brano che non c'è");
         }
     }
+    public String Menu(){
+        return "Premi 0 per uscire \n"+
+                "Premi 1 per visualizzare i brani \n"+
+                "Premi 2 per aggiungere un brano \n"+
+                "Premi 3 per modificare un brano \n"+
+                "Premi 4 per rimuovere un brano";
+    }
 
     @Override
     public String toString() {
