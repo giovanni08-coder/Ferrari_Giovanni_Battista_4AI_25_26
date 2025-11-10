@@ -1,6 +1,9 @@
 void main() {
     Televisione t1 = new Televisione("Samsung");
     Televisione t2 = t1;
+    t2.dimesione=10f;
+    System.out.println(t1.dimesione);
+    System.out.println(t2.dimesione);
     t1 = new Televisione("Xiaomi"); // Una nuova istanza viene creata nell'heap,
                                                     // quella vecchia rimane vacante
     // t1.Televisione("Samsung"); -> non si può chiamare più volte il costruttore
