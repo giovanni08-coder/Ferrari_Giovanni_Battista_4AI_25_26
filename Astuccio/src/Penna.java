@@ -13,7 +13,7 @@ public class Penna {
     public void setCancellabile(boolean cancellabile) {
         this.cancellabile = cancellabile;
     }
-    private boolean getCancellabile(){
+    public boolean getCancellabile(){
         return cancellabile;
     }
 
