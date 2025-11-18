@@ -15,6 +15,7 @@ public class Griglia {
                     matrice[i][j]=' ';
                 }
             }
+            resetGriglia();
         }
 
         public void resetGriglia() {

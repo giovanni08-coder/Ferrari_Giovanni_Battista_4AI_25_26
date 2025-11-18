@@ -21,5 +21,4 @@ void main() {
     }
     System.out.println("Ha vinto il giocatore: ");
     System.out.println(griglia.controllaVincita());
-    griglia.resetGriglia();
 }
