@@ -9,6 +9,12 @@ public class Casa {
         numStanze = 4;
         metriQuadrati = 100.45;
     }
+    public Casa(String nome,boolean fibraOttiva,int numStanze,double metriQuadrati){
+        setNome(nome);
+        setFibraOttiva(fibraOttiva);
+        setNumStanze(numStanze);
+        setMetriQuadrati(metriQuadrati);
+    }
 
     public void setNome(String nome) {
         if (nome.length()<2){
@@ -49,5 +55,15 @@ public class Casa {
 
     public double getMetriQuadrati() {
         return metriQuadrati;
+    }
+
+    @Override
+    public String toString() {
+        return "Casa{" +
+                "nome='" + nome + '\'' +
+                ", fibraOttiva=" + fibraOttiva +
+                ", numStanze=" + numStanze +
+                ", metriQuadrati=" + metriQuadrati +
+                '}';
     }
 }

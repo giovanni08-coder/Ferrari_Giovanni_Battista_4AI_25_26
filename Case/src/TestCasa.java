@@ -24,4 +24,11 @@ void main() {
     System.out.println("Fibra ottica presente: " + casa2.getFibraOttiva());
     System.out.println("Metri quadrati: " + casa2.getMetriQuadrati());
     System.out.println(" Nume stanze: " + casa2.getNumStanze());
+
+    String Nome = IO.readln("inserisci il nome della casa");
+    boolean FibraOttiva = Boolean.parseBoolean(IO.readln("Cancellabile (true o false)"));
+    double MetriQuadrati = Double.parseDouble(IO.readln("Inserisci i metri quadrati"));
+    int NumStanze = Integer.parseInt(IO.readln("inserisci il numero delle stanze"));
+    Casa casa3 = new Casa(Nome,FibraOttiva,NumStanze,MetriQuadrati);
+    System.out.println(casa3.toString());
 }
