@@ -30,5 +30,5 @@ void main() {
     double MetriQuadrati = Double.parseDouble(IO.readln("Inserisci i metri quadrati"));
     int NumStanze = Integer.parseInt(IO.readln("inserisci il numero delle stanze"));
     Casa casa3 = new Casa(Nome,FibraOttiva,NumStanze,MetriQuadrati);
-    System.out.println(casa3.toString());
+    System.out.println(casa2.toString());
 }
