@@ -11,11 +11,25 @@ public class Scouterino {
     private int chilometri_fatti;
     private LocalDate dataAcquisto;
 
-    public Scouterino(String m, String t,int c,LocalDate d){
+    private Proprietario p;
+
+    public Proprietario getP() {
+        return p;
+    }
+
+    public void setP(Proprietario p) {
+        if (p == null){
+            throw new IllegalArgumentException("Non è possibile assegnare null al proprietario");
+        }
+        this.p = p;
+    }
+
+    public Scouterino(String m, String t, int c, LocalDate d,Proprietario p){
         Set_modello(m);
         setTarga(t);
         setChilometri_fatti(c);
         setDataAcquisto(d);
+        setP(p);
     }
     public String getTarga(){
         return targa;
@@ -78,6 +92,7 @@ public class Scouterino {
                 ", targa='" + targa + '\'' +
                 ", chilometri_fatti=" + chilometri_fatti +
                 ", dataAcquisto=" + dataAcquisto +
+                p +
                 '}';
     }
 }
