@@ -1,5 +1,5 @@
 void main() {
-    Penna penna1 = new Penna();
+    /*Penna penna1 = new Penna();
     penna1.setMarca("BIC");
     penna1.setCancellabile(true);
     penna1.setQuantitaInchiostro(1.34);
@@ -20,5 +20,13 @@ void main() {
     System.out.println("Marca" + penna2.getMarca());
     System.out.println("è cancellabile" + penna2.getCancellabile());
     System.out.println("quantità inchiostro: " + penna2.getQuantitaInchiostro());
-    System.out.println("Colore:" + penna2.getColore());
+    System.out.println("Colore:" + penna2.getColore());*/
+
+
+    String Marca = IO.readln("inserisci la marca della penna");
+    boolean CancellabileBoolean = Boolean.parseBoolean(IO.readln("Inserisci se la penna è cancellabile (true o false)"));
+    double QuantitaInchiostroDouble = Double.parseDouble(IO.readln("Inserisci la quantità dell'inchiostro"));
+    String Colore = IO.readln("Inserisxci il colore");
+    Penna penna3 = new Penna(Marca,CancellabileBoolean,QuantitaInchiostroDouble,Colore);
+    System.out.println(penna3.toString());
 }

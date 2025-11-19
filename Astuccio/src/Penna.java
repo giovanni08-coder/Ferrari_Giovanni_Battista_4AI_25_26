@@ -9,6 +9,12 @@ public class Penna {
         quantitaInchiostro = 1.3;
         colore = "blue";
     }
+    public Penna(String m,boolean canc,double qI,String color){
+        setMarca(m);
+        setCancellabile(canc);
+        setQuantitaInchiostro(qI);
+        setColore(color);
+    }
 
     public void setCancellabile(boolean cancellabile) {
         this.cancellabile = cancellabile;
@@ -41,12 +47,22 @@ public class Penna {
 
     public void setQuantitaInchiostro(double quantitaInchiostro) {
         if (quantitaInchiostro>1.47){
-            throw new IllegalArgumentException("Non puoi inserire un valore così elevato di inchiostro nella penna ");
+            throw new IllegalArgumentException("Non puoi inserire un valore così elevato/basso di inchiostro nella penna ");
         }
         this.quantitaInchiostro = quantitaInchiostro;
     }
 
     public double getQuantitaInchiostro() {
         return quantitaInchiostro;
+    }
+
+    @Override
+    public String toString() {
+        return "Penna{" +
+                "marca='" + marca + '\'' +
+                ", cancellabile=" + cancellabile +
+                ", quantitaInchiostro=" + quantitaInchiostro +
+                ", colore='" + colore + '\'' +
+                '}';
     }
 }
