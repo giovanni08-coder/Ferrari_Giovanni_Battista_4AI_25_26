@@ -5,7 +5,7 @@ import java.util.Stack;
 public class Rastrelliera {
     private String nome;
     private Stack<Disco> stack = new Stack<Disco>();
-    private final int numeroDischiPossibili;
+    public final int numeroDischiPossibili;
     public Rastrelliera(final int numeroDischiPossibili,String nome){
         this.numeroDischiPossibili = numeroDischiPossibili;
         setNome(nome);
@@ -23,16 +23,30 @@ public class Rastrelliera {
     }
 
     public void InserisciDisco(Rastrelliera rastrelliera,Disco disco){
-        if (rastrelliera.stack.size()!=0 && disco.getDimensione() < rastrelliera.stack.getFirst().getDimensione()){
+        if (rastrelliera.stack.size()!=0 && disco.getDimensione() > rastrelliera.stack.getFirst().getDimensione()){
             throw new IllegalArgumentException("Non puoi inserire questo disco");
         }
         rastrelliera.stack.add(disco);
     }
 
     public void spostaDisco(Rastrelliera mittente, Rastrelliera ricevente){
+        if (mittente == null ){
+            throw new IllegalArgumentException("Non puoi togliere qualcosa che non c'è");
+        }
             InserisciDisco(ricevente,mittente.stack.get(0));
             mittente.stack.pop();
     }
-    public String RastrellieraCompleta(Rastrelliera rastrelliera){
+    public boolean RastrellieraCompleta(Rastrelliera rastrelliera){
+        if (rastrelliera.stack.size() != numeroDischiPossibili){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Rastrelliera{" +
+                "stack=" + stack +
+                '}';
     }
 }
