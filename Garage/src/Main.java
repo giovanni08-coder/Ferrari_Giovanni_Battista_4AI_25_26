@@ -1,6 +1,8 @@
 List<Scouterino> parcheggio= new ArrayList<Scouterino>();
 List<Proprietario> proprietari= new ArrayList<Proprietario>();
-// implementare: se targa è presente in archivio e mostra i dati,targa parziale prime 3 cifre,chilometraggio un range di chilometri km minimo e km massimo,ordinamento in base a filtro scelta, ricerca in base al modello,ricerca in base alla data
+// implementare: se targa è presente in archivio e mostra i dati,targa parziale prime 3 cifre,chilometraggio un range di chilometri km minimo e km massimo,ordinamento in base a filtro scelta.
+
+//📂 Serializzazione di file per inserire dati prova.
 void datiDiProva() {
         // Creo i proprietari usando il costruttore
     // Proprietari (tutti >= 18 anni nel 2025)
@@ -133,17 +135,23 @@ void Ricercakm(){
     }
 }
 void OrdinaperChilometri(){
-    Map<Integer,Scouterino> dizionario = new HashMap<>();
     Scouterino s= null;
-    int i =0;
-    while (i<parcheggio.size()) {
-        s = parcheggio.get(i);
-        dizionario.put(parcheggio.get(i).getChilometri_fatti(), s);
-        i++;
+    Scouterino s1= null;
+    for (int i = 1; i< parcheggio.size();i++){
+        for (int q = 0; q< parcheggio.size()-1;q++){
+            s = parcheggio.get(q);
+            s1 = parcheggio.get(q+1);
+            if (parcheggio.get(q).getChilometri_fatti() > parcheggio.get(q+1).getChilometri_fatti()) {
+               parcheggio.get(q+1) = ;
+
+        }
+
     }
-    for (int ordina = 0; ordina<dizionario.size(); ordina++){
-        //if (dizionario.get(dizionario.).keySet()>dizionario.keySet());
+
+    for (int j = 0; j<parcheggio.size();j++){
+        System.out.println(parcheggio.get(j));
     }
+}
 }
 void eliminaProprietario(Proprietario p){
     for (int i = 0; i<parcheggio.size();i++){
@@ -203,6 +211,10 @@ void Modifica(){
         i++;
     }
 }
+//ricerca in base al modello,ricerca in base alla data
+void Ricerca_modello(){
+
+}
 
 
 void main() {
@@ -224,5 +236,5 @@ void main() {
 
         }
     }while (scelta!=0);*/
-    eliminaProprietario(new Proprietario("RSTMRA85C13H501Z", "Mario", "Rossi", "Milano", LocalDate.of(1985, 3, 13)));
+    OrdinaperChilometri();
 }
