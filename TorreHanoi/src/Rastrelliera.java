@@ -33,7 +33,7 @@ public class Rastrelliera {
         if (mittente == null ){
             throw new IllegalArgumentException("Non puoi togliere qualcosa che non c'è");
         }
-            InserisciDisco(ricevente,mittente.stack.get(0));
+            InserisciDisco(ricevente,mittente.stack.get(mittente.stack.size()-1));
             mittente.stack.pop();
     }
     public boolean RastrellieraCompleta(Rastrelliera rastrelliera){
@@ -46,7 +46,9 @@ public class Rastrelliera {
     @Override
     public String toString() {
         return "Rastrelliera{" +
-                "stack=" + stack +
+                "nome='" + nome + '\'' +
+                ", stack=" + stack +
+                ", numeroDischiPossibili=" + numeroDischiPossibili +
                 '}';
     }
 }
