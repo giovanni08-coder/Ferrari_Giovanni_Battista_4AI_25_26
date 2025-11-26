@@ -142,7 +142,6 @@ void OrdinaperChilometri(){
             s = parcheggio.get(q);
             s1 = parcheggio.get(q+1);
             if (parcheggio.get(q).getChilometri_fatti() > parcheggio.get(q+1).getChilometri_fatti()) {
-               parcheggio.get(q+1) = ;
 
         }
 
