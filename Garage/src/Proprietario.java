@@ -18,6 +18,13 @@ public Proprietario(String CF,String nome,String cognome,String residenza,LocalD
     setNascità(nascità);
 
 }
+public Proprietario(){
+    this.CF = "RSSMRA85C13H501Z";
+    this.nome = "Mario";
+    this.cognome = "Rossi";
+    this.residenza = "Milano";
+    this.nascità = LocalDate.of(1985, 3, 13);
+}
 
     public static void setListaCF(List<String> listaCF) {
         ListaCF = listaCF;
