@@ -142,7 +142,6 @@ void OrdinaperChilometri(){
             s = parcheggio.get(q);
             s1 = parcheggio.get(q+1);
             if (parcheggio.get(q).getChilometri_fatti() > parcheggio.get(q+1).getChilometri_fatti()) {
-               parcheggio.get(q+1) = ;
 
         }
 
@@ -169,16 +168,26 @@ void visualizzaProprietari(){
 }
 void Aggiunta(){
     try {
-        String t = IO.readln("inserisci targa");
+        Scouterino s = new Scouterino();
+        Proprietario p = new Proprietario();
+            String t = IO.readln("inserisci targa");
+            s.setTarga(t);
         int k = Integer.parseInt(IO.readln("Inserisci i km"));
+        s.setChilometri_fatti(k);
         String m = IO.readln("inserisci il modello");
+        s.Set_modello(m);
         LocalDate d = LocalDate.parse(IO.readln("Inserisci la data di acquisto"));
+        s.setDataAcquisto(d);
         String nome = IO.readln("inserisci nome");
+        p.setNome(nome);
         String cognome = IO.readln("inserisci cognome");
+        p.setCognome(cognome);
         String CF = IO.readln("inserisci codice fiscale");
+        p.setCF(CF);
         String residenza = IO.readln("inserisci residenza");
+        p.setResidenza(residenza);
         LocalDate nascità = LocalDate.parse(IO.readln("Inserisci la data di nascità"));
-        Proprietario p= new Proprietario(CF,nome,cognome,residenza,nascità);
+        p.setNascità(nascità);
         Scouterino s1 = new Scouterino(m,t,k,d,p);
         parcheggio.add(s1);
     } catch (Exception e) {
@@ -213,6 +222,69 @@ void Modifica(){
 }
 //ricerca in base al modello,ricerca in base alla data
 void Ricerca_modello(){
+    List<Scouterino> l = new ArrayList<>();
+    Scouterino s= new Scouterino();
+    boolean errore = true;
+    String m = "";
+    while (errore) {
+        try {
+            m = IO.readln("inserisci il modello");
+            s.Set_modello(m);
+            errore=false;
+        } catch (Exception e) {
+            System.out.println("Riporva");
+            errore=true;
+        }
+
+    }
+    int i =0;
+    while (i<parcheggio.size()) {
+
+        if (parcheggio.get(i).getModello().equals(m)) {
+            s = parcheggio.get(i);
+            l.add(s);
+        }
+        i++;
+    }
+    if (s==null){
+        System.out.println("Data non presente");
+    }
+    for (int elementi = 0;elementi<l.size();elementi++){
+        System.out.println(l.get(elementi));
+    }
+
+}
+void Ricerca_Data(){
+    List<Scouterino> l = new ArrayList<>();
+    Scouterino s= new Scouterino();
+    boolean errore = true;
+    LocalDate d = LocalDate.of(1985, 3, 13);
+    while (errore) {
+        try {
+            LocalDate.parse(IO.readln("Inserisci la data di acquisto"));
+            s.setDataAcquisto(d);
+            errore=false;
+        } catch (Exception e) {
+            System.out.println("Riporva");
+            errore=true;
+        }
+
+    }
+    int i =0;
+    while (i<parcheggio.size()) {
+
+        if (parcheggio.get(i).getData_acquisto().equals(d)) {
+            s = parcheggio.get(i);
+            l.add(s);
+        }
+        i++;
+    }
+    if (s==null){
+        System.out.println("Data non presente");
+    }
+    for (int elementi = 0;elementi<l.size();elementi++){
+        System.out.println(l.get(elementi));
+    }
 
 }
 
@@ -236,5 +308,5 @@ void main() {
 
         }
     }while (scelta!=0);*/
-    OrdinaperChilometri();
+    Ricerca_Data();
 }

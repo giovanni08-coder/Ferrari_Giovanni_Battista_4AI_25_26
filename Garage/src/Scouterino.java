@@ -23,7 +23,12 @@ public class Scouterino {
         }
         this.p = p;
     }
-
+    public Scouterino(){
+        this.modello = "Malaguti Phantom F10";
+        this.targa = "A13CDE";
+        this.chilometri_fatti = 10000;
+        this.dataAcquisto = LocalDate.of(2000, 1, 29);
+    }
     public Scouterino(String m, String t, int c, LocalDate d,Proprietario p){
         Set_modello(m);
         setTarga(t);
