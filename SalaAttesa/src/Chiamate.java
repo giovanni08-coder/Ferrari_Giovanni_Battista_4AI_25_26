@@ -1,4 +1,6 @@
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Chiamate {
     private String codiceBiglietto;
@@ -15,6 +17,9 @@ public class Chiamate {
     }
 
     private void setCodiceBiglietto(String c) {
+        if (c == null || c.trim().isEmpty()) {
+            throw new IllegalArgumentException("Il codice biglietto non può essere nullo o vuoto");
+        }
         this.codiceBiglietto = c;
     }
 
@@ -23,6 +28,9 @@ public class Chiamate {
     }
 
     private void setIdentificativoCassa(String i) {
+        if (i.trim().isEmpty()) {
+        throw new IllegalArgumentException("L'identificativo della cassa non può essere vuoto");
+    }
         this.identificativoCassa = i;
     }
 
@@ -31,6 +39,9 @@ public class Chiamate {
     }
 
     private void setOrario(Timestamp o) {
+        if (o == null || Timestamp.valueOf(LocalDateTime.now()).before(o)) {
+            throw new IllegalArgumentException("L'orario non può essere nullo o vuoto");
+        }
         this.orario = o;
     }
 
