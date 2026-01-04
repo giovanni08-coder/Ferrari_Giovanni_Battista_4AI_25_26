@@ -1,11 +1,11 @@
 import java.util.Scanner;
 import java.sql.Timestamp;
-public class Main {
-        private static Cassa[] casse;
-        private static Gestore gestore;
-        private static LogChiamate log;
 
-        public static void main(String[] args) {
+        private Cassa[] casse;
+        private Gestore gestore;
+        private LogChiamate log;
+
+         void main() {
             log = new LogChiamate();
             gestore = new Gestore(log);
             casse = new Cassa[] { new Cassa() };
@@ -44,5 +44,4 @@ public class Main {
                 0. Esci
                 """);
         }
-    }
 
