@@ -80,11 +80,38 @@ String nAccensioni(List <Lampadina>lista_Lampadine){
     return "Le accensioni andate a buon fine sono: " + accensioni;
 }
 void AccendiOne(List <Lampadina>lista_Lampadine){
-    int lampadina = Integer.parseInt(IO.readln("Inserisci l'indice della lampadina che vuoi accendere"));
-    lista_Lampadine.get()
+    boolean errore = true;
+    while (errore) {
+        try {
+            int lampadina = Integer.parseInt(IO.readln("Inserisci l'indice della lampadina che vuoi accendere"));
+            if (lampadina>0 && lampadina<lista_Lampadine.size()){
+                lista_Lampadine.get(lampadina - 1).accendi();
+                errore=false;
+            }
+            else {
+                System.out.println("Errore non puoi spegnere la lampadina");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Errore");
+        }
+    }
 }
 void SpegniOne(List <Lampadina>lista_Lampadine){
-
+    boolean errore = true;
+    while (errore) {
+        try {
+            int lampadina = Integer.parseInt(IO.readln("Inserisci l'indice della lampadina che vuoi spegnere"));
+            if (lampadina>0 && lampadina<lista_Lampadine.size()){
+                lista_Lampadine.get(lampadina - 1).spegni();
+                errore=false;
+            }
+            else {
+                System.out.println("Errore non puoi spegnere la lampadina");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Errore");
+        }
+    }
 }
 void Menu(){
     System.out.println("Premi 1 per creare tot lampadine");
@@ -97,10 +124,36 @@ void Menu(){
     System.out.println("Premi 8 per spegnere una lampadina");
 }
 void main() {
-    creaLampadine(lista_Lampadine);
-    posiziona_lampadine(lista_Lampadine);
-    accendiTutto(lista_Lampadine);
-    System.out.println(lista_Lampadine);
-
-    System.out.println(nAccensioni(lista_Lampadine));
+    boolean errore = true;
+    while (errore){
+        Menu();
+        int scelta = Integer.parseInt(IO.readln("Inserisci il numero che vuoi eseguire: "));
+        if (scelta==1){
+            creaLampadine(lista_Lampadine);
+        }
+        if (scelta==2){
+            accendiTutto(lista_Lampadine);
+        }
+        if (scelta==3){
+            Spegni_Tutte(lista_Lampadine);
+        }
+        if (scelta==4){
+            posiziona_lampadine(lista_Lampadine);
+        }
+        if (scelta==5){
+            throwNastyLamp(lista_Lampadine);
+        }
+        if (scelta==6){
+            System.out.println(nAccensioni(lista_Lampadine));
+        }
+        if (scelta==7){
+            AccendiOne(lista_Lampadine);
+        }
+        if (scelta==8){
+            SpegniOne(lista_Lampadine);
+        }
+        if(scelta==0){
+            errore=false;
+        }
+    }
 }
