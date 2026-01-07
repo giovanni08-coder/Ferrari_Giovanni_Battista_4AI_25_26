@@ -1,6 +1,6 @@
 void Tempo_passato(){
     int t = Integer.parseInt(IO.readln("inserisci i secondi passati"));
-    
+
 }
 
 void main() {
