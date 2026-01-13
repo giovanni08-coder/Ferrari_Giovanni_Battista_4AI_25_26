@@ -33,8 +33,13 @@ public class Main extends ApplicationAdapter {
     private String text;
 
     private Texture lamp;
+    private Texture light_lamp;
+    private Texture light_guasta;
     private TextureRegion lampRegion;
     private Random r;
+    private Lampadina lampadina;
+    private boolean showlamp=true;
+    private boolean showlamp2 =false;
 
     @Override
     public void create() {
@@ -45,8 +50,11 @@ public class Main extends ApplicationAdapter {
         text = file.readString();
         font = new BitmapFont();
         lamp = new Texture("lampadina.png");
+        light_lamp = new Texture("lampadina_accesa.png");
+        light_guasta = new Texture("lampadina_guasta.png");
         lampRegion = new TextureRegion(image, 0, 0, 40, 52);
         r = new Random();
+        lampadina=new Lampadina();
     }
 
     @Override
@@ -68,25 +76,68 @@ public class Main extends ApplicationAdapter {
         // disegno lo sfondo
         // batch.enableBlending();
         batch.draw(image, 100, 500);
-
         if (isAPressed == true) {
             batch.draw(image, 0, 0);
         }
 
         if (leftPressed) {
-            batch.draw(image, 20, 20);
+            if (lampadina.getStato()==StatoLampadina.SPENTA){
+                showlamp=false;
+                showlamp2=true;
+            }
+            lampadina.accendi();
+            /*
+            if (lampadina.getStato()==StatoLampadina.SPENTA){
+                showlamp=false;
+                showlamp2=true;
+            }
+            if (lampadina.getStato()==StatoLampadina.ACCESA){
+                showlamp2=false;
+                showlamp=true;
+
+            }
+            if (showlamp){
+                lampadina.spegni();
+            }
+            if (showlamp2){
+                lampadina.accendi();
+            }
+
+             */
+        }
+        if (rightPressed){
+            if (lampadina.getStato()==StatoLampadina.ACCESA){
+                showlamp2=false;
+                showlamp=true;
+            }
+            lampadina.spegni();
+
+        }
+        if (lampadina.getStato()==StatoLampadina.ROTTA){
+            showlamp2=false;
+            showlamp=false;
+            batch.draw(light_guasta, 0, 200);
         }
 
-        batch.draw(image, mouseX, 250);
-        batch.draw(region, 400, 250);
 
-        batch.draw(lamp, 0,200);
+        //batch.draw(image, mouseX, 250);
+        //batch.draw(region, 400, 250);
 
+        if (showlamp2) {
+            batch.draw(light_lamp, 0, 200);
+        }
+        if (showlamp) {
+            batch.draw(lamp, 0, 200);
+        }
+
+        /*
         for(int i=0;i<200;i++){
             int x = r.nextInt(100, 600);
             batch.draw(lamp, x,200);
 
         }
+
+         */
         font.draw(batch, "Ciao", 10, 500);
         font.draw(batch, String.valueOf(mouseX), 10, 520);
         batch.end();
