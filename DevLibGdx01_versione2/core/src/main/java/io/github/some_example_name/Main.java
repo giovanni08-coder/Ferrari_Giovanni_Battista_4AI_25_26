@@ -26,6 +26,9 @@ import java.util.Random;
     |_|  |_|\__,_|_|_| |_|  Entry point dell'applicazione.
 */
 public class Main extends ApplicationAdapter {
+    private Random r;
+    private List<Lampadina> archivio = new ArrayList<Lampadina>();
+
     private SpriteBatch batch;
     private Texture image;
     private TextureRegion region;
@@ -33,37 +36,35 @@ public class Main extends ApplicationAdapter {
     private int mouseX;
     private BitmapFont font;
     private String text;
-    private List<Lampadina> archivio = new ArrayList<>();
 
     private Texture lamp;
-    private Texture light_lamp;
-    private Texture light_guasta;
-    private TextureRegion lampRegion;
-    private Random r;
-    private Lampadina lampadina;
-    private boolean showlamp = true;
-    private boolean showlamp2 = false;
-    private Lampadina lampadina2;
+    private TextureRegion lampSpenta,lampAccesa, lampRotta;
+    private Lampadina l1;
 
     @Override
     public void create() {
+        r = new Random();
         batch = new SpriteBatch();
         image = new Texture("libgdx.png");
         region = new TextureRegion(image, 20, 20, 50, 50);
-        //FileHandle file = new FileHandle("prova.txt");
-        //text = file.readString();
+        FileHandle file = new FileHandle("prova.txt");
+        text = file.readString();
         font = new BitmapFont();
+
+
         lamp = new Texture("lampadina.png");
-        light_lamp = new Texture("lampadina_accesa.png");
-        light_guasta = new Texture("lampadina_guasta.png");
-        lampRegion = new TextureRegion(image, 0, 0, 40, 52);
-        r = new Random();
-        lampadina = new Lampadina();
-        for(int i=0;i<20;i++){
-            lampadina2 = new Lampadina();
-            lampadina2.posiziona(r.nextInt(0,500), r.nextInt(0,100));
-            archivio.add(lampadina);
+        lampSpenta = new TextureRegion(lamp, 0, 0, 40, 52);
+        lampAccesa = new TextureRegion(lamp, 52, 0, 40, 52);
+        lampRotta = new TextureRegion(lamp, 104, 0, 40, 52);
+
+        for(int i=0; i<20; i++){
+            l1 = new Lampadina();
+            l1.posiziona(r.nextInt(0, 100), i);
+            archivio.add(l1);
         }
+        l1 = new Lampadina();
+        l1.posiziona(500, 300);
+        archivio.add(l1);
     }
 
     @Override
@@ -71,24 +72,60 @@ public class Main extends ApplicationAdapter {
         // Update application
         mouseX = Gdx.input.getX();
         boolean isAPressed = Gdx.input.isKeyPressed(Keys.A);
-        boolean isEscPressed = Gdx.input.isKeyPressed(Keys.ESCAPE);
-
         float delta = Gdx.graphics.getDeltaTime();
-
         boolean leftPressed = Gdx.input.isButtonPressed(Input.Buttons.LEFT);
         boolean rightPressed = Gdx.input.isButtonPressed(Input.Buttons.RIGHT);
 
         // Render
-        ScreenUtils.clear(Color.BLACK);
+        ScreenUtils.clear(Color.BLUE);
         batch.begin();
-        // batch.disableBlending();
-        // disegno lo sfondo
-        // batch.enableBlending();
-        batch.draw(image, 100, 500);
         if (isAPressed == true) {
-            batch.draw(image, 0, 0);
+            l1.accendi();
         }
-        /*
+        if (leftPressed) {
+            batch.draw(image, 20, 20);
+        }
+
+        // Disegnare le lampadine
+        disegnaLampadine(archivio);
+
+
+        //batch.draw(lampSpenta, 0,500);
+        //batch.draw(lampAccesa, 120,450);
+        //batch.draw(lampRotta, 200,520);
+
+        // Informazioni sulle lampadine
+        font.draw(batch, "Ciao", 10, 500);
+        font.draw(batch, String.valueOf(mouseX), 10, 520);
+        batch.end();
+    }
+
+    @Override
+    public void dispose() {
+        batch.dispose();
+        image.dispose();
+    }
+
+    public void disegnaLampadine(List<Lampadina> a){
+        for (Lampadina l : a) {
+            switch(l.getStato()){
+                case SPENTA: batch.draw(lampSpenta, l.getX(), l.getY()); break;
+                case ACCESA: batch.draw(lampAccesa, l.getX(), l.getY()); break;
+                case ROTTA: batch.draw(lampRotta, l.getX(), l.getY()); break;
+            }
+        }
+
+        font.draw(batch, "Lampadine in archivio : " + String.valueOf(a.size()), 10, 590);
+    }
+
+
+}
+
+
+
+
+
+/*
         if (leftPressed) {
             if (lampadina.getStato() == StatoLampadina.SPENTA) {
                 showlamp = false;
@@ -135,33 +172,3 @@ public class Main extends ApplicationAdapter {
 
 
          */
-        //batch.draw(lamp,lampadina2.getX(),lampadina2.getY());
-        font.draw(batch, "Ciao", 10, 500);
-        font.draw(batch, String.valueOf(mouseX), 10, 520);
-        batch.end();
-    }
-
-    @Override
-    public void dispose() {
-        batch.dispose();
-        image.dispose();
-    }
-
-    public void disegnaLampadine(List<Lampadina> a) {
-        for (Lampadina lamp : a) {
-            switch (lamp.getStato()) {
-                case ACCESA:
-                    batch.draw(light_lamp, 0, 200);
-                    break;
-                case SPENTA:
-                    batch.draw(this.lamp, 0, 200);
-                    break;
-                case ROTTA:
-                    batch.draw(light_guasta, 0, 200);
-                    break;
-            }
-        }
-        font.draw(batch,"lampadine in archivio: " + String.valueOf(a.size()),10,260);
-    }
-}
-
