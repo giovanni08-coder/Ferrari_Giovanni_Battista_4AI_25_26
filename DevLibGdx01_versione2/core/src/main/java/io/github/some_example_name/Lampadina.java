@@ -1,9 +1,11 @@
 package io.github.some_example_name;
 
+import java.util.Random;
+
 public class Lampadina {
     final private int maxAccensioni = 10;
     static private int conta = 0;
-
+    static private Random r;
     private int x, y;
     private int id;
     private int accensioni;
@@ -50,12 +52,13 @@ public class Lampadina {
 
         id = conta;
         conta++;
+        r=new Random();
     }
 
 
     public void posiziona(int x, int y){
-        setX(x);
-        setY(y);
+        if (x>0 && x<600)setX(x);
+        if(y>0 && x<600)setY(y);
     }
 
     // chiede alla lampadina di provare ad accendersi
@@ -63,10 +66,12 @@ public class Lampadina {
     // se supera le accensioni massime la lampadina si rompe
     public void accendi(){
         if (stato == StatoLamp.SPENTA) {
-            stato = StatoLamp.ACCESA;
-            accensioni++;
-            if (accensioni > maxAccensioni){
-                stato = StatoLamp.ROTTA;
+            int prob =  r.nextInt(0,100);
+            if (prob<5) stato=StatoLamp.ROTTA;
+            else {
+                stato = StatoLamp.ACCESA;
+
+                accensioni++;
             }
         }
     }

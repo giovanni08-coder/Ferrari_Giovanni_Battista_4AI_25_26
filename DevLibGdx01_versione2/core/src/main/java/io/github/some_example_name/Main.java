@@ -25,6 +25,9 @@ import java.util.Random;
     | |  | | (_| | | | | |
     |_|  |_|\__,_|_|_| |_|  Entry point dell'applicazione.
 */
+
+//conta le accensioni andate a buon fine
+//rimozione lampadine bruciate
 public class Main extends ApplicationAdapter {
     private Random r;
     private List<Lampadina> archivio = new ArrayList<Lampadina>();
@@ -36,9 +39,9 @@ public class Main extends ApplicationAdapter {
     private int mouseX;
     private BitmapFont font;
     private String text;
-
+    private int conta;
     private Texture lamp;
-    private TextureRegion lampSpenta,lampAccesa, lampRotta;
+    private TextureRegion lampSpenta, lampAccesa, lampRotta;
     private Lampadina l1;
 
     @Override
@@ -57,18 +60,21 @@ public class Main extends ApplicationAdapter {
         lampAccesa = new TextureRegion(lamp, 52, 0, 40, 52);
         lampRotta = new TextureRegion(lamp, 104, 0, 40, 52);
 
-        for(int i=0; i<20; i++){
-            l1 = new Lampadina();
-            l1.posiziona(r.nextInt(0, 100), i);
+        for (int i = 0; i < 20; i++) {
+            Lampadina l1 = new Lampadina();
+            l1.posiziona(r.nextInt(300, 600), r.nextInt(300, 450));
             archivio.add(l1);
         }
-        l1 = new Lampadina();
-        l1.posiziona(500, 300);
-        archivio.add(l1);
+        //l1 = new Lampadina();
+        //l1.posiziona(500, 300);
+        //archivio.add(l1);
     }
 
     @Override
     public void render() {
+        for (Lampadina l : archivio) {
+            l.posiziona(l.getX() + r.nextInt(-1, 2), l.getY() + r.nextInt(-1, 2));
+        }
         // Update application
         mouseX = Gdx.input.getX();
         boolean isAPressed = Gdx.input.isKeyPressed(Keys.A);
@@ -79,16 +85,39 @@ public class Main extends ApplicationAdapter {
         // Render
         ScreenUtils.clear(Color.BLUE);
         batch.begin();
-        if (isAPressed == true) {
-            l1.accendi();
+        if (Gdx.input.isKeyPressed(Keys.A) == true) {
+            for (Lampadina l : archivio) {
+                int accen = l.getaccensioni();
+                l.accendi();
+                int acce_dopo= l.getaccensioni();
+
+                conta+= acce_dopo-accen;
+            }
         }
-        if (leftPressed) {
-            batch.draw(image, 20, 20);
+        if (Gdx.input.isKeyPressed(Keys.S) == true) {
+            for (Lampadina l : archivio) {
+                l.spegni();
+            }
         }
+        if (Gdx.input.isKeyPressed(Keys.C) == true) {
+            for (int i = 0; i < 20; i++) {
+                Lampadina l1 = new Lampadina();
+                l1.posiziona(r.nextInt(5, 700), r.nextInt(400, 520));
+                archivio.add(l1);
+            }
+        }
+        if (Gdx.input.isKeyPressed(Keys.D) == true) {
+            for (int i = 0; i < archivio.size(); i++) {
+                if (archivio.get(i).getStato() == StatoLamp.ROTTA) {
+                    archivio.remove(archivio.get(i));
+                }
+            }
+        }
+
 
         // Disegnare le lampadine
         disegnaLampadine(archivio);
-
+        font.draw(batch, "accensioni: " + String.valueOf(conta), 30, 500);
 
         //batch.draw(lampSpenta, 0,500);
         //batch.draw(lampAccesa, 120,450);
@@ -106,19 +135,23 @@ public class Main extends ApplicationAdapter {
         image.dispose();
     }
 
-    public void disegnaLampadine(List<Lampadina> a){
+    public void disegnaLampadine(List<Lampadina> a) {
         for (Lampadina l : a) {
-            switch(l.getStato()){
-                case SPENTA: batch.draw(lampSpenta, l.getX(), l.getY()); break;
-                case ACCESA: batch.draw(lampAccesa, l.getX(), l.getY()); break;
-                case ROTTA: batch.draw(lampRotta, l.getX(), l.getY()); break;
+            switch (l.getStato()) {
+                case SPENTA:
+                    batch.draw(lampSpenta, l.getX(), l.getY());
+                    break;
+                case ACCESA:
+                    batch.draw(lampAccesa, l.getX(), l.getY());
+                    break;
+                case ROTTA:
+                    batch.draw(lampRotta, l.getX(), l.getY());
+                    break;
             }
         }
 
         font.draw(batch, "Lampadine in archivio : " + String.valueOf(a.size()), 10, 590);
     }
-
-
 }
 
 
