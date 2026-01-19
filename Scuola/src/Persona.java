@@ -1,4 +1,4 @@
-public abstract class Persona {
+public class Persona {
     protected   String CodiceFiscale;
     protected String Nome;
     protected String Cognome;
