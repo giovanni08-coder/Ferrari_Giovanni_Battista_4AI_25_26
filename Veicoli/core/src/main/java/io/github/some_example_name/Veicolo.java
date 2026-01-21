@@ -20,7 +20,7 @@ public abstract class Veicolo {
         setColore(colore);
     }
 
-    private String getColore() {
+    public String getColore() {
         return colore;
     }
 
@@ -51,27 +51,27 @@ public abstract class Veicolo {
     private void setCosto(float costo) {
         this.costo = costo;
     }
-    public boolean ControllaColore(String colore){
-        List<String> li = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Viola", "Rosa", "Marrone", "Nero", "Bianco", "Grigio", "Azzurro");
+    public  static boolean ControllaColore(String colore){
+        List<String> li = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Azzurro");
         if (!li.contains(colore)){
             return false;
         }
         return true;
     }
-    public boolean ControllaNome(String nome){
+    public static boolean ControllaNome(String nome){
         List<String> li = Arrays.asList("macchina", "auto","moto", "portapacchi", "autobus","pullman","");
-        if (!li.contains(nomeVeicolo.toLowerCase())){
+        if (!li.contains(nome.toLowerCase())){
             return false;
         }
         return true;
     }
-    public boolean ControllaData(LocalDate data){
+    public static boolean ControllaData(LocalDate data){
         if (data.isAfter(LocalDate.now())){
             return false;
         }
         return true;
     }
-    public boolean ControllaCosto(float costo){
+    public static  boolean ControllaCosto(float costo){
         if (costo<0){
             return false;
         }

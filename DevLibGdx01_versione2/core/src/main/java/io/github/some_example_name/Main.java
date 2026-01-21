@@ -105,6 +105,7 @@ public class Main extends ApplicationAdapter {
                 l1.posiziona(r.nextInt(5, 700), r.nextInt(400, 520));
                 archivio.add(l1);
             }
+
         }
         if (Gdx.input.isKeyPressed(Keys.D) == true) {
             for (int i = 0; i < archivio.size(); i++) {
