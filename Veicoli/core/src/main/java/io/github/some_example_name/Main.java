@@ -51,7 +51,8 @@ public class Main extends ApplicationAdapter {
         yellowCar = new Texture("yellowCar.png");
         List<String> li2 = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Azzurro");
         for (int i = 0; i < 5; i++) {
-            Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,,"AA132BB");
+            String colorecasuale = li2.get(r.nextInt(li2.size()));
+            Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,colorecasuale,"AA132BB");
             l1.posiziona(r.nextInt(300, 600), r.nextInt(300, 450));
             auto.add(l1);
         }
