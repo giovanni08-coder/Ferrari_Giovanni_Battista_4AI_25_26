@@ -19,9 +19,15 @@ public class Scacchiera {
             }
         }
     }
-
-    public Pedina[][] getScacchiera(){
-        Pedina[][] copiascacchiera= scacchiera;
-        return copiascacchiera;
+    public Scacchiera(Scacchiera altra){
+        scacchiera =  new Pedina[N_CASELLE][N_CASELLE];
+        for (int r=0; r<3; r++){
+            for (int c =0;c<N_CASELLE;c++){
+                scacchiera[r][c]= altra.scacchiera[r][c];
+            }
+        }
+    }
+    public Scacchiera getScacchiera(){
+        return  new Scacchiera(this);
     }
 }
