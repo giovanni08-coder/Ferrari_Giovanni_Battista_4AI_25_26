@@ -61,7 +61,7 @@ public class Pedina {
 
             if (tipo == Tipo.DAMONE){
                 // controlli a croce
-                if((nuovaRiga!= (riga -1) || nuovaRiga!= (riga -1)) && ((nuovaColonna!= colonna+1) || nuovaColonna!=colonna-1)){
+                if(!(Math.abs(nuovaRiga-riga)==1 && ((nuovaColonna -  colonna==1) || nuovaColonna - colonna==-1))){
                     throw new DamaException("Posizione non valida");
                 }
             }
