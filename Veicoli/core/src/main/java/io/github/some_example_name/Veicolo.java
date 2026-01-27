@@ -24,7 +24,7 @@ public abstract class Veicolo {
         return colore;
     }
 
-    public void setColore(String colore) {
+    private void setColore(String colore) {
         this.colore = colore;
     }
 
@@ -40,7 +40,7 @@ public abstract class Veicolo {
         return data;
     }
 
-    public void setData(LocalDate data) {
+    private void setData(LocalDate data) {
         this.data = data;
     }
 

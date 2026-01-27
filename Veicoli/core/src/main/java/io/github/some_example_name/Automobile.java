@@ -21,16 +21,13 @@ public class Automobile extends Veicolo{
         return marca;
     }
 
-    private void setMarca(String marca) {
-
-        this.marca = marca;
-    }
+    private void setMarca(String marca) {this.marca = marca;}
 
     public int getX() {
         return x;
     }
 
-    public void setX(int x) {
+    private void setX(int x) {
         this.x = x;
     }
 
@@ -38,7 +35,7 @@ public class Automobile extends Veicolo{
         return y;
     }
 
-    public void setY(int y) {
+    private void setY(int y) {
         this.y = y;
     }
 
@@ -67,6 +64,12 @@ public class Automobile extends Veicolo{
     public void posiziona(int x, int y){
         if (x>0 && x<600)setX(x);
         if(y>0 && x<600)setY(y);
+    }
+    public void muovi(int x, int y){
+        if (x>0 && x<500){
+            x--;
+            this.x=x;
+        }
     }
 
 

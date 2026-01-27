@@ -45,7 +45,8 @@ public class Main extends ApplicationAdapter {
         font = new BitmapFont();
         auto = new ArrayList<>();
         bluCar = new Texture("blueCar.png");
-        light_bluCar = new Texture("GreenCar.png");
+        light_bluCar = new Texture("light-blueCar.png");
+        greeCar = new Texture("GreenCar.png");
         orangeCar = new Texture("orangeCar.png");
         redCar = new Texture("redCar.png");
         yellowCar = new Texture("yellowCar.png");
@@ -77,22 +78,34 @@ public class Main extends ApplicationAdapter {
         ScreenUtils.clear(Color.BLUE);
         batch.begin();
         if (Gdx.input.isKeyPressed(Keys.A) == true) {
-            auto.clear();
             for (int i = 0; i < 5; i++) {
-                Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,"Rosso","AA132BB");
+                List<String> li2 = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Azzurro");
+                Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,li2.get(r.nextInt(li2.size())),"AA132BB");
                 l1.posiziona(r.nextInt(5, 700), r.nextInt(400, 520));
                 auto.add(l1);
             }
 
         }
         if (Gdx.input.isKeyPressed(Keys.S) == true) {
-
+            auto.removeAll(auto);
         }
         if (Gdx.input.isKeyPressed(Keys.C) == true) {
+            int autopresenti = auto.size();
+            auto.clear();
 
+            //modifica colore auto presenti
+            for (int i = 0; i < autopresenti; i++) {
+                List<String> li2 = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Azzurro");
+                Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,li2.get(r.nextInt(li2.size())),"AA132BB");
+                l1.posiziona(r.nextInt(5, 700), r.nextInt(400, 520));
+                auto.add(l1);
+            }
         }
         if (Gdx.input.isKeyPressed(Keys.D) == true) {
-
+            //muovi auto
+            for (int i = 0;i<auto.size();i++){
+                auto.get(i).muovi(auto.get(i).getX(),auto.get(i).getY());
+            }
         }
 
 
