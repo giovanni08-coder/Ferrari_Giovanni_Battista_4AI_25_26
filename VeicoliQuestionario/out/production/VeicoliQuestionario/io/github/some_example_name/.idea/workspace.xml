@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a7fd59a2-e7fe-4380-8055-491afd82064a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VeicoliQuestionario.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/GreenCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/blueCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/libgdx.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/light-blueCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/orangeCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/prova.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/redCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/font-list.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/font-subtitle.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/font-window.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/font.fnt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/uiskin.atlas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/uiskin.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/ui/uiskin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/assets/yellowCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/core/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/core/src/main/java/io/github/some_example_name/Automobile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/core/src/main/java/io/github/some_example_name/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/core/src/main/java/io/github/some_example_name/Veicolo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradle/gradle-daemon-jvm.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/icons/logo.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/icons/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/icons/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/nativeimage.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/Lwjgl3Launcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/StartupHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/resources/libgdx128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/resources/libgdx16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/resources/libgdx32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/lwjgl3/src/main/resources/libgdx64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Veicoli/settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="38stwC8cwnNOoyzkVQjp6Q09KKq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a7fd59a2-e7fe-4380-8055-491afd82064a" name="Changes" comment="" />
+      <created>1769600343112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769600343112</updated>
+    </task>
+    <servers />
+  </component>
+</project>

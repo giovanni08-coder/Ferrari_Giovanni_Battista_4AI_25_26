@@ -77,8 +77,8 @@ public class Main extends ApplicationAdapter {
         // Render
         ScreenUtils.clear(Color.BLUE);
         batch.begin();
-        if (Gdx.input.isKeyPressed(Keys.A) == true) {
-            for (int i = 0; i < 5; i++) {
+        if (Gdx.input.isButtonPressed(Input.Buttons.LEFT) == true) {
+            for (int i = 0; i < 1; i++) {
                 List<String> li2 = Arrays.asList("Rosso", "Blu", "Giallo", "Verde", "Arancione", "Azzurro");
                 Automobile l1 = new Automobile("Fiat",LocalDate.now(),300000,li2.get(r.nextInt(li2.size())),"AA132BB");
                 l1.posiziona(r.nextInt(5, 700), r.nextInt(400, 520));
