@@ -19,5 +19,7 @@ public class Rettangolo extends FiguraGeometrica {
     public float area(){
         return base * lunghezzaLato;
     }
+
+
 }
 

@@ -6,5 +6,9 @@ public class Pentagono extends FiguraGeometrica {
         super(5, lunghezzaLato);
     }
 
+    @Override
+    public float area() {
+        return 0;
+    }
 }
 

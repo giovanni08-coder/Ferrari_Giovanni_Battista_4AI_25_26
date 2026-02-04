@@ -9,5 +9,10 @@ public class Cerchio extends FiguraGeometrica {
     public float perimetro() {;
         return (float)(2*lunghezzaLato*Math.PI);
     }
+
+    @Override
+    public float area() {
+        return 0;
+    }
 }
 

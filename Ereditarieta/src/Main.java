@@ -12,6 +12,7 @@ void main() {
     Rettangolo r = new Rettangolo(3, 7);
 
 
+    System.out.println(r.toString());
     System.out.println("Il perimetro del rettangolo è: " + r.perimetro());
     System.out.println("L'erea del rettangolo è: " + r.area());
 

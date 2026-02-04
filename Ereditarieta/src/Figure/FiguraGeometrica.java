@@ -14,7 +14,7 @@ public abstract class FiguraGeometrica{
         return numeroLati * lunghezzaLato;
     }
 
-    private void setNumeroLati(int nl){
+    protected void setNumeroLati(int nl){
         if (nl<=0) {
             throw new IllegalArgumentException("Il numero dei lati non può essere negativo");
         }
