@@ -1,0 +1,3 @@
+public enum Arma {
+    PUGNO,PISTOLA,SPADA,BACHETTAMAGICA,
+}
