@@ -1,10 +1,13 @@
-public class Bambino extends Persona{
-    private int Pipi;
+import java.time.LocalDate;
+import java.util.Date;
 
-    public Bambino(String nome, String cognome, int eta, int pipi) {
+public class Bambino extends Persona{
+    private LocalDate data;
+
+    public Bambino(String nome, String cognome, int eta, LocalDate data) {
         super(nome, cognome, eta);
         setC();
-        Pipi = pipi;
+        this.data = data;
     }
 
     @Override
@@ -12,18 +15,18 @@ public class Bambino extends Persona{
         c="Bambino";
     }
 
-    public int getPipi() {
-        return Pipi;
+    public LocalDate getData() {
+        return data;
     }
 
-    public void setPipi(int pipi) {
-        Pipi = pipi;
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     @Override
     public String toString() {
         return "Bambino{" + "Bambino"+ super.toString() +
-                "Pipi=" + Pipi +
+                "Data=" + data +
                 '}';
     }
 }

@@ -1,4 +1,5 @@
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,13 +16,13 @@ public class GestorePersoneFile {
         //scorro le persone da salvare
         for (Persona p: personedaSalvare){
             //creo stringa da salvare su file per ogni persona
-            if (p instanceof Bambino){
-                personaTesto =p.getC() + SEPARATORE + p.getNome() + SEPARATORE + p.getCognome() + SEPARATORE + p.getEta() + SEPARATORE  + ((Bambino) p).getPipi();
+            if (p.getC()=="Bambino"){
+                personaTesto =p.getC() + SEPARATORE + p.getNome() + SEPARATORE + p.getCognome() + SEPARATORE + p.getEta() + SEPARATORE  + ((Bambino) p).getData().toString();
             }
-            if (p instanceof Laureato){
+            if (p.getC()=="Universitario"){
                 personaTesto =p.getC() + SEPARATORE + p.getNome() + SEPARATORE + p.getCognome() + SEPARATORE + p.getEta() + SEPARATORE  + ((Laureato) p).getMateriaUniversitaria();
             }
-            else {
+            if (p.getC()=="Persona"){
                 personaTesto =p.getC() + SEPARATORE + p.getNome() + SEPARATORE + p.getCognome() + SEPARATORE + p.getEta();
             }
             //scrivo il file
@@ -56,8 +57,8 @@ public class GestorePersoneFile {
                 String nome =riga.split(SEPARATORE)[1] ;
                 String cognome = riga.split(SEPARATORE)[2];
                 int eta = Integer.parseInt(riga.split(SEPARATORE)[3]);
-                int pipi = Integer.parseInt(riga.split(SEPARATORE)[4]);
-                Bambino b = new Bambino(nome,cognome,eta,pipi);
+                LocalDate data = LocalDate.parse(riga.split(SEPARATORE)[4]);
+                Bambino b = new Bambino(nome,cognome,eta,data);
                 lista.add(b);
             }
             else {
