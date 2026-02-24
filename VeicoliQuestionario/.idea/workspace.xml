@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7fd59a2-e7fe-4380-8055-491afd82064a" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../Classe_LabPesronaggi/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Classe_LabPesronaggi/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DevLibGdx01_versione2/core/src/main/java/io/github/some_example_name/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DevLibGdx01_versione2/core/src/main/java/io/github/some_example_name/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Ereditarieta/src/Figure/FiguraGeometrica.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ereditarieta/src/Figure/FiguraGeometrica.java" afterDir="false" />
@@ -14,6 +15,9 @@
       <change beforePath="$PROJECT_DIR$/../Veicoli/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Veicoli/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VeicoliQuestionario/io/github/some_example_name/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VeicoliQuestionario/io/github/some_example_name/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Veicoli_giochino/core/src/main/java/io/github/some_example_name/Automobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Veicoli_giochino/core/src/main/java/io/github/some_example_name/Automobile.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> 1412f618c4e7ce9cb1bb5456574f5d36aea4c6b1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
