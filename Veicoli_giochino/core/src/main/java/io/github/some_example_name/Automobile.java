@@ -54,7 +54,7 @@ public class Automobile extends Veicolo{
         return true;
      }
     public static boolean ControllaTarga(String targa){
-        if (targhe.contains(targa) || targa.matches("^[a-zA-Z]{2} + [0-9]{3} + [a-zA-Z]{2}$")){
+        if (targhe.contains(targa) || targa.matches("^[a-zA-Z]{2}[0-9]{3}[a-zA-Z]{2}$")){
             return false;
         }
         targhe.add(targa);

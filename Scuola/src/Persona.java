@@ -1,5 +1,5 @@
 public class Persona {
-    protected   String CodiceFiscale;
+    protected String CodiceFiscale;
     protected String Nome;
     protected String Cognome;
 

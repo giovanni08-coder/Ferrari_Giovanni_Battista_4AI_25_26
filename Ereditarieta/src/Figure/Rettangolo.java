@@ -13,6 +13,7 @@ public class Rettangolo extends FiguraGeometrica {
 
     @Override
     public float perimetro() {
+
         return 2*(base + lunghezzaLato);
     }
 

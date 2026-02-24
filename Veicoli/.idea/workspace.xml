@@ -5,48 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b1f208f-15b2-43a8-8aaf-e24e1ed125ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/GreenCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/blueCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/libgdx.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/light-blueCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/orangeCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/prova.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/redCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/font-list.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/font-subtitle.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/font-window.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/font.fnt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/uiskin.atlas" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/uiskin.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/ui/uiskin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/yellowCar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/some_example_name/Automobile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/some_example_name/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/io/github/some_example_name/Veicolo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/gradle-daemon-jvm.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.icns" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/icons/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/nativeimage.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/Lwjgl3Launcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/java/io/github/some_example_name/lwjgl3/StartupHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx128.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lwjgl3/src/main/resources/libgdx64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Classe_LabPesronaggi/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Classe_LabPesronaggi/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DevLibGdx01_versione2/core/src/main/java/io/github/some_example_name/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../DevLibGdx01_versione2/core/src/main/java/io/github/some_example_name/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ereditarieta/src/Figure/FiguraGeometrica.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ereditarieta/src/Figure/FiguraGeometrica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ereditarieta/src/Figure/Quadrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ereditarieta/src/Figure/Quadrato.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ereditarieta/src/Figure/Rettangolo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ereditarieta/src/Figure/Rettangolo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Scuola/src/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Scuola/src/Persona.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,29 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Veicoli:lwjgl3 [:lwjgl3:io.github.some_example_name.lwjgl3.Lwjgl3Launcher.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/GIOVANNIBATTISTAFERR/Desktop/info/Ferrari_Giovanni_Battista_4AI_25_26/Veicoli&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Download Sources.executor": "Run",
+    "Gradle.Veicoli:lwjgl3 [:lwjgl3:io.github.some_example_name.lwjgl3.Lwjgl3Launcher.main()].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/giamb/OneDrive/Desktop/info/Ferrari_Giovanni_Battista_4AI_25_26/Veicoli"
   }
-}</component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7b1f208f-15b2-43a8-8aaf-e24e1ed125ce" name="Changes" comment="" />

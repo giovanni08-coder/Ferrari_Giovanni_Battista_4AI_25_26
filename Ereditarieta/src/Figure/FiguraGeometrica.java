@@ -9,8 +9,11 @@ public abstract class FiguraGeometrica{
         setNumeroLati(nl);
         setLunghezzaLati(ll);
     }
+    public FiguraGeometrica(int nl){
+        setNumeroLati(nl);
+    }
 
-    public float perimetro(){
+    protected float perimetro(){
         return numeroLati * lunghezzaLato;
     }
 
@@ -26,6 +29,10 @@ public abstract class FiguraGeometrica{
             throw new IllegalArgumentException("La lunghezza dei lati non può essere negativo");
         }
         lunghezzaLato = ll;
+    }
+
+    public float getLunghezzaLato() {
+        return lunghezzaLato;
     }
 
     public abstract float area();

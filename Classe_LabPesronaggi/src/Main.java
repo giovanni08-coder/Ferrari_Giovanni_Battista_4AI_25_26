@@ -1,3 +1,4 @@
+
 void main() {
     //Mago m = new Mago("Gjini");
     //System.out.println(m);

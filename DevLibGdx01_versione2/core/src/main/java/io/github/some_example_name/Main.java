@@ -50,8 +50,6 @@ public class Main extends ApplicationAdapter {
         batch = new SpriteBatch();
         image = new Texture("libgdx.png");
         region = new TextureRegion(image, 20, 20, 50, 50);
-        FileHandle file = new FileHandle("prova.txt");
-        text = file.readString();
         font = new BitmapFont();
 
 
