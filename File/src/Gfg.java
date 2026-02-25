@@ -24,10 +24,10 @@ public class Gfg implements Serializable {
     public static void Leggi_binario() throws Exception {
         // Reading from a binary file
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("data.bin"))) {
-            List<String> stringhe = (List<String>) ois.readObject();
+            List<Persona> stringhe = (List<Persona>) ois.readObject();
 
             // Stampa per verifica
-            for (String s : stringhe) {
+            for (Persona s : stringhe) {
                 System.out.println(s);
             }
 
