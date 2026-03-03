@@ -307,6 +307,7 @@ void main() {
                 System.out.println("Sei uno stupidino non puoi inserire altri numeri");
 
         }
-    }while (scelta!=0);*/
-    Ricerca_Data();
+    }while (scelta!=0);
+     */
+
 }

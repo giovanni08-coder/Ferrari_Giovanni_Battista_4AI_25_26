@@ -2,12 +2,18 @@
 void main() {
     //Mago m = new Mago("Gjini");
     //System.out.println(m);
-    Personaggio p1 = new Personaggio("lapo");
-    Personaggio P2 = new Personaggio("manila");
-    Personaggio p3 = new Personaggio("Franci");
-    Zombie zombie = new Zombie("Frank");
-    zombie.cattura(P2);
-    System.out.println(zombie);
+    List<Personaggio> personaggi =Arrays.asList(new Personaggio("lapo"),new Personaggio("manila"),new Personaggio("Franci")
+    ,new Zombie("Frank"));
+    try{
+        Gfg.Scrivi_binario(personaggi);
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
+    try {
+        Gfg.Leggi_binario();
+    } catch (Exception e) {
+        throw new RuntimeException(e);
+    }
 
 
 }

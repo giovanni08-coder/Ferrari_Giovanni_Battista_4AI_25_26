@@ -1,4 +1,7 @@
-public class Personaggio {
+import java.io.Serializable;
+import java.security.SecureRandomParameters;
+
+public class Personaggio implements Serializable {
     //nome,vita,stamina,danni
     private String nome;
     private int vita;
