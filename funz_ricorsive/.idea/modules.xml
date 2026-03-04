@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Veicoli.iml" filepath="$PROJECT_DIR$/.idea/Veicoli.iml" />
+      <module fileurl="file://$PROJECT_DIR$/funz_ricorsive.iml" filepath="$PROJECT_DIR$/funz_ricorsive.iml" />
     </modules>
   </component>
 </project>

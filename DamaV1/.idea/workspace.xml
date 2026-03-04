@@ -4,59 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b1f208f-15b2-43a8-8aaf-e24e1ed125ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../File/src/Gfg.java" beforeDir="false" afterPath="$PROJECT_DIR$/../File/src/Gfg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de97f8ef-0c3c-4609-bf0f-96c781cd56d5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package-info" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="38Z4AQUiS7fgBWmRFPYneoMFYY6" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="38pfFf0i2FWuIRa9h4S6oPmuBw2" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Gradle.Download Sources.executor": "Run",
-    "Gradle.Veicoli:lwjgl3 [:lwjgl3:io.github.some_example_name.lwjgl3.Lwjgl3Launcher.main()].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/GIOVANNIBATTISTAFERR/Desktop/info_25_26/Ferrari_Giovanni_Battista_4AI_25_26/Veicoli"
+    "last_opened_file_path": "C:/Users/GIOVANNIBATTISTAFERR/Desktop/info_25_26/Ferrari_Giovanni_Battista_4AI_25_26/DamaV1"
   }
 }]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7b1f208f-15b2-43a8-8aaf-e24e1ed125ce" name="Changes" comment="" />
-      <created>1768993614472</created>
+      <changelist id="de97f8ef-0c3c-4609-bf0f-96c781cd56d5" name="Changes" comment="" />
+      <created>1769501332901</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1768993614472</updated>
+      <updated>1769501332901</updated>
     </task>
     <servers />
   </component>
