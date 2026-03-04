@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Albero {
     private Nodo root;
-    private static List<Nodo> nodi = new ArrayList<>();
+    private List<Integer> nodi = new ArrayList<>();
     public Albero(Nodo root) {
         this.root = root;
     }
@@ -34,20 +34,21 @@ public class Albero {
             }
         }
     }
+    public List<Integer> preOrder(Nodo nodo){
+        if (nodo==null) return null;
+        nodi.add(nodo.getValore());
+        preOrder(nodo.getSx());
+        preOrder(nodo.getDx());
+        return nodi;
+    }
 
     @Override
     public String toString() {
-        if (root.getSx()==null && root.getDx()!=null){
-            return "" + root.getValore() + root.getDx().getValore();
+        List<Integer> lista_completa = this.preOrder(root);
+        String string="";
+        for (int i =0;i< lista_completa.size();i++){
+            string+= lista_completa.get(i) + " ";
         }
-        if (root.getDx()==null && root.getSx()!=null){
-            return "" + root.getValore() + root.getSx().getValore();
-        }
-        if (root.getDx()==null && root.getSx()==null){
-            return "" + root.getValore();
-        }
-        return "Albero{" +
-                "root=" + root.getValore() + "figlio sinistro: " +  root.getSx().getValore() + "figlio Destro: " +  root.getDx().getValore() +
-                '}' + root.toString();
+        return string;
     }
 }
