@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.io.IOException;
 
 public class FinestraDomande extends Frame implements ActionListener {
@@ -16,6 +17,8 @@ public class FinestraDomande extends Frame implements ActionListener {
     private Button noButton;
     private ImagePanel immagineImp;
     private Panel panelCentro;
+    private JTextField altroAnimale;
+    private JTextField domandaDaImplementare;
 
     private Nodo nodoCorrente;
 
@@ -30,6 +33,14 @@ public class FinestraDomande extends Frame implements ActionListener {
         testoLabel = new Label("", Label.CENTER);
         testoLabel.setFont(font);
         add(testoLabel, BorderLayout.NORTH);
+
+        //text box finali
+        altroAnimale= new JTextField();
+        altroAnimale.setFont(font);
+        domandaDaImplementare= new JTextField();
+        domandaDaImplementare.setFont(font);
+        altroAnimale.setBounds(100,100,200,50);
+        domandaDaImplementare.setBounds(200,200,200,50);
 
         // Pulsanti
         siButton = new Button("Si");
@@ -99,6 +110,10 @@ public class FinestraDomande extends Frame implements ActionListener {
             //disabilito i pulsanti Si / No (così non si può intraprendere alcuna ulteriore azione)
             siButton.setEnabled(false);
             noButton.setEnabled(false);
+            Panel panelTextBox = new Panel();
+            panelTextBox.add(domandaDaImplementare);
+            panelTextBox.add(altroAnimale);
+            add(panelTextBox, BorderLayout.EAST);
         }
     }
 

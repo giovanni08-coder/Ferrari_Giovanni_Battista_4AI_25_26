@@ -44,7 +44,7 @@ public class GestorePersoneFile {
         BufferedReader br = new BufferedReader(new FileReader(NOME_FILE));
         List<String> righe;
         righe = br.readAllLines();
-
+        System.out.println(righe);
         //invece di fare br.readAllLines fai:
         //while(stringa = br.lines() !=null){
         //fai tutto quello che ho fatto io
