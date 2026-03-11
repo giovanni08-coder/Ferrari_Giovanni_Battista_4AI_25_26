@@ -17,12 +17,20 @@ public class FinestraDomande extends Frame implements ActionListener {
     private Button noButton;
     private ImagePanel immagineImp;
     private Panel panelCentro;
+
     private JTextField altroAnimale;
     private JTextField domandaDaImplementare;
 
     private Nodo nodoCorrente;
+    private boolean inFoglia = false;
 
-    private void creaFinestraGrafica(){
+    public FinestraDomande(Nodo radice) {
+        nodoCorrente = radice;
+        creaFinestraGrafica();
+        aggiornaFinestra();
+    }
+
+    private void creaFinestraGrafica() {
 
         Font font = new Font("Arial", Font.PLAIN, FONT_DIMENSIONE);
         setTitle("Indovina l'animale");
@@ -34,13 +42,12 @@ public class FinestraDomande extends Frame implements ActionListener {
         testoLabel.setFont(font);
         add(testoLabel, BorderLayout.NORTH);
 
-        //text box finali
-        altroAnimale= new JTextField();
+        // TextBox finali (inizialmente nascosti)
+        altroAnimale = new JTextField();
         altroAnimale.setFont(font);
-        domandaDaImplementare= new JTextField();
+
+        domandaDaImplementare = new JTextField();
         domandaDaImplementare.setFont(font);
-        altroAnimale.setBounds(100,100,200,50);
-        domandaDaImplementare.setBounds(200,200,200,50);
 
         // Pulsanti
         siButton = new Button("Si");
@@ -57,9 +64,9 @@ public class FinestraDomande extends Frame implements ActionListener {
 
         add(panelBottoni, BorderLayout.SOUTH);
 
-        // Pannello centrale per eventuale immagine
+        // Pannello centrale per immagine
         panelCentro = new Panel();
-        immagineImp = new ImagePanel(IMMAGINE_LARGHEZZA,IMMAGINE_ALTEZZA);
+        immagineImp = new ImagePanel(IMMAGINE_LARGHEZZA, IMMAGINE_ALTEZZA);
         panelCentro.add(immagineImp);
         add(panelCentro, BorderLayout.CENTER);
 
@@ -74,66 +81,72 @@ public class FinestraDomande extends Frame implements ActionListener {
         setVisible(true);
     }
 
-    public FinestraDomande(Nodo radice) {
+    private void aggiornaFinestra() {
 
-        //TODO radice può essere null!
-        nodoCorrente = radice;      //il nodo corrente punta alla radice
-
-        //crea la finestra grafica
-        creaFinestraGrafica();
-
-        //aggiorno il contenuto della finestra grafica
-        aggiornaFinestra();
-    }
-
-    private void aggiornaFinestra(){
-
-        //domanda
-        if (!nodoCorrente.isAnimale()){
+        if (!nodoCorrente.isAnimale()) {
+            inFoglia = false;
             testoLabel.setText(nodoCorrente.getTesto() + " (s/n)");
-        }
-        //tentativo di soluzione
-        else{
-            //mostro l'animale nella label
+        } else {
+            inFoglia = true;
             testoLabel.setText("Penso che l'animale sia: " + nodoCorrente.getTesto());
 
-            //se è prevista una immagine, la mostro
             if (nodoCorrente.getUrlImmagine() != null) {
                 try {
                     Image immagine = ImageIO.read(nodoCorrente.getUrlImmagine());
                     immagineImp.setImage(immagine);
-                }catch (IOException e){
-                    //ignoro l'errore, non verrà mostrata nessuna immagine
+                } catch (IOException e) {
+                    // nessuna immagine
                 }
             }
-
-            //disabilito i pulsanti Si / No (così non si può intraprendere alcuna ulteriore azione)
-            siButton.setEnabled(false);
-            noButton.setEnabled(false);
-            Panel panelTextBox = new Panel();
-            panelTextBox.add(domandaDaImplementare);
-            panelTextBox.add(altroAnimale);
-            add(panelTextBox, BorderLayout.EAST);
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        //se l'utente preme si, mi sposto sul ramo dell'albero "si"
         if (e.getSource() == siButton) {
+
+            if (inFoglia) {
+                testoLabel.setText("Grande! Ho indovinato!");
+                siButton.setEnabled(false);
+                noButton.setEnabled(false);
+                return;
+            }
+
             nodoCorrente = nodoCorrente.si;
-            //aggiorno la finestra grafica
             aggiornaFinestra();
         }
 
-        //se l'utente preme no, mi sposto sul ramo dell'albero "no"
         if (e.getSource() == noButton) {
+
+            if (inFoglia) {
+                mostraTextBoxApprendimento();
+                nodoCorrente.no= altroAnimale.getText();
+                return;
+            }
+
             nodoCorrente = nodoCorrente.no;
-            //aggiorno la finestra grafica
             aggiornaFinestra();
         }
-
     }
 
+    private void mostraTextBoxApprendimento() {
+
+        Panel panelTextBox = new Panel(new GridLayout(2, 1));
+
+        domandaDaImplementare.setText("Scrivi una domanda che distingue i due animali");
+        altroAnimale.setText("Qual era l'animale che avevi in mente?");
+
+        panelTextBox.add(domandaDaImplementare);
+        panelTextBox.add(altroAnimale);
+
+        add(panelTextBox, BorderLayout.EAST);
+
+        siButton.setEnabled(false);
+        noButton.setEnabled(false);
+
+        validate();
+        repaint();
+    }
 }
+

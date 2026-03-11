@@ -6,7 +6,7 @@ public class Gfg implements Serializable {
 
     // Drver Class
     // Main Function
-    public static void Scrivi_binario(List<Nodo>albero) throws Exception {
+    public static void Scrivi_binario(Albero albero) throws Exception {
         // Writing to binary file
         //Stream.write(new byte[]{0b00001011, 0x65, 0x07, 0x6C, 0x6F,0x65,0x75});
         OutputStream Stream = new FileOutputStream("data.bin");
