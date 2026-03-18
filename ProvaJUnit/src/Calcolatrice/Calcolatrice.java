@@ -1,3 +1,5 @@
+package Calcolatrice;
+
 public abstract class Calcolatrice {
 
     public static double somma(double a, double b) {
