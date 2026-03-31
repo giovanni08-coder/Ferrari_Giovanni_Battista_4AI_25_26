@@ -19,7 +19,7 @@ public class Grafo {
         }
     }
 
-        
+
         public void aggiungiArco(int u, int v, int peso) {
             controllaIndice(u);
             controllaIndice(v);
