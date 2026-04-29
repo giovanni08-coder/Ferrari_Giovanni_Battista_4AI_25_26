@@ -13,7 +13,7 @@ public class Tavolo extends JFrame {
     private Tavolo(){
 
         super();
-        setTitle("La mia prima finestra");
+        setTitle("Franco");
 
         setSize(400, 300);
 
